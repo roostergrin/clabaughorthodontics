@@ -1,10 +1,14 @@
+# **NOTE!!**
+
+> This site requires a config file that contains the fullpage License Key to work properly. Please ask Matt or someone on the FED team for this file if you do not already have it. **DO NOT PUSH IT TO GITHUB** Please add it to the `.gitignore` file.
+
 # rg-vue 2.0
 
 > A Vue.js boilerplate for web development
 
 ## Testing included with Jest framework
 
-> For info please read through docs: https://vue-test-utils.vuejs.org/guides 
+> For info please read through docs: https://vue-test-utils.vuejs.org/guides
 
 ## Commit Message Conventions
 ```bash

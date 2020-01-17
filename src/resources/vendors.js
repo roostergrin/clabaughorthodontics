@@ -4,10 +4,12 @@ import VueWaypoint from 'vue-waypoint'
 // import VueParallaxJs from 'vue-parallax-js'
 // import VueScrollTo from 'vue-scrollto'
 // import VueAxe from 'vue-axe'
+import VueFullPage from 'vue-fullpage.js'
 
 const vendors = () => {
   Vue.use(VeeValidate)
   Vue.use(VueWaypoint)
+  Vue.use(VueFullPage)
   // Vue.use(VueParallaxJs, { minWidth: 1024 })
   // Vue.use(VueScrollTo, {
   //   container: 'body',
