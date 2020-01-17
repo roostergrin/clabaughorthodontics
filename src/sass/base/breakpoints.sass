@@ -10,6 +10,10 @@
   @media screen and (max-width: $screen-laptop)
     @content
 
+@mixin laptop-sm
+  @media screen and (max-width: $screen-laptop-sm)
+    @content
+
 @mixin ipad-pro
   @media screen and (max-width: $screen-tablet-lg) and (min-height: 1366px)
     @content
@@ -20,6 +24,10 @@
 
 @mixin tablet
   @media screen and (max-width: $screen-tablet)
+    @content
+
+@mixin nexus
+  @media screen and (max-width: $screen-nexus)
     @content
 
 @mixin phone-lg

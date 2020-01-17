@@ -3,33 +3,48 @@
 
 body
   @include desktop
-    font-size: 18px
+    font-size: rem-calc(17)
   @include phone
     font-size: 14px
   text-rendering: optimizeLegibility
-  line-height: 1.467
-  font-family: $font
-  font-size: 16px
+  line-height: 1.6
+  color: $c6
+  font-family: $font-body
+  font-size: rem-calc(15)
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
 h1
+  text-transform: uppercase
   line-height: 1.25
-  font-size: 36px
+  letter-spacing: 3px
+  font-family: $font
+  font-size: rem-calc(30)
+  font-weight: 600
 
 h2
   line-height: 1.25
-  letter-spacing: 2.8px
-  font-size: 22px
+  font-family: $font
+  font-size: rem-calc(24)
+  font-weight: 600
 
 h3
-  line-height: 1.12
-  font-size: 22px
-  font-weight: 700
+  @extend h2
+  font-weight: 400
 
 h4
-  line-height: 1.12
-  font-size: 18px
+  line-height: 2.3
+  letter-spacing: 1px
+  font-family: $font
+  font-size: rem-calc(18)
+  font-weight: 700
+
+h5
+  line-height: 1.15
+  letter-spacing: 1.5px
+  font-family: $font
+  font-size: rem-calc(15)
+  font-weight: 500
 
 a
   text-decoration: none
@@ -44,5 +59,10 @@ input[type=text], input[type=textarea]
 
 .hero-text
   line-height: 1.25
-  font-size: 52px
+  font-family: $font
+  font-size: 70px
   font-weight: bold
+
+  &--alt
+    @extend .hero-text
+    font-weight: 500

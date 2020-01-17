@@ -2,7 +2,6 @@
 
 <script>
 import TheNavigation from 'components/navigation/navigation'
-import TheFooter from 'components/footer/footer'
 
 export default {
   async created () {
@@ -10,10 +9,16 @@ export default {
     // this.$store.dispatch('GET_BLOG')
     this.$store.dispatch('GET_PAGES')
     this.$store.dispatch('SET_SCROLLED', false)
+    this.$store.dispatch('SET_DRAWER', false)
+    this.$store.dispatch('ACTIVE_INDEX', 0)
+  },
+  mounted () {
+    if ((typeof window.orientation !== 'undefined') || (navigator.userAgent.indexOf('IEMobile') !== -1)) {
+      this.$store.dispatch('IS_MOBILE', true)
+    }
   },
   components: {
-    TheNavigation,
-    TheFooter
+    TheNavigation
   }
 }
 </script>

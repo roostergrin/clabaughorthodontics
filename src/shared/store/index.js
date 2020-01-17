@@ -12,7 +12,10 @@ const store = new Vuex.Store({
     // sortedBlog: {},
     loading: true,
     pages: {},
-    scrolled: {}
+    scrolled: {},
+    isMobile: false,
+    currIndex: {},
+    drawer: {}
   },
   mutations: mutations,
   actions: actions

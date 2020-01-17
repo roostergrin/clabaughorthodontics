@@ -1,3 +1,7 @@
-.pages-home(v-if='props')
-  h1 {{ props.title }}
+main.pages-home(v-if='props')
+  full-page#fullpage(:options='fullpageOptions', ref='home')
+    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+      h1 {{ props.title }}
+    .section.fp-auto-height
+      TheFooter  
   

@@ -3,7 +3,10 @@ import {
   GET_PAGES,
   // GET_BLOG,
   // SET_BLOG,
-  SET_SCROLLED
+  SET_SCROLLED,
+  IS_MOBILE,
+  ACTIVE_INDEX,
+  SET_DRAWER
 } from './mutation-types.js'
 
 const mutations = {
@@ -24,6 +27,15 @@ const mutations = {
   },
   [SET_SCROLLED] (state, data) {
     state.scrolled = data
+  },
+  [IS_MOBILE] (state, data) {
+    state.isMobile = data
+  },
+  [ACTIVE_INDEX] (state, data) {
+    state.currIndex = data
+  },
+  [SET_DRAWER] (state, data) {
+    state.drawer = data
   }
 }
 

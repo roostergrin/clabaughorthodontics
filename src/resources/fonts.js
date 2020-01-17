@@ -9,8 +9,11 @@ var WebFont = require('webfontloader')
 const fonts = () => {
   WebFont.load({
     google: {
-      families: [ 'Open+Sans:400,600' ]
+      families: [ 'Raleway:400,500,600,700' ]
     }
+  }),
+  WebFont.load({
+    typekit: { id: 'wte6ybz'}
   })
 }
 

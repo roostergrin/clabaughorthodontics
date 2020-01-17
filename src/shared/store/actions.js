@@ -5,7 +5,10 @@ import {
   // GET_BLOG,
   // SET_BLOG,
   GET_PAGES,
-  SET_SCROLLED
+  SET_SCROLLED,
+  IS_MOBILE,
+  ACTIVE_INDEX,
+  SET_DRAWER
 } from './mutation-types'
 
 const actions = {
@@ -68,6 +71,15 @@ const actions = {
   },
   SET_SCROLLED ({ commit }, data) {
     commit(SET_SCROLLED, data)
+  },
+  IS_MOBILE ({ commit }, data) {
+    commit(IS_MOBILE, data)
+  },
+  ACTIVE_INDEX ({ commit }, data) {
+    commit(ACTIVE_INDEX, data)
+  },
+  SET_DRAWER ({ commit }, data) {
+    commit(SET_DRAWER, data)
   }
 }
 
