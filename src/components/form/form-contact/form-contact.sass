@@ -1,0 +1,240 @@
+.form-contact
+  width: 100%
+
+  &__form
+    display: flex
+    position: relative
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+
+  &__group
+    position: relative
+    margin-top: 2.5rem
+    width: 100%
+
+    &--half
+      width: calc(50% - (#{$gutter} / 2))
+
+    &--button
+      display: flex
+      width: 100%
+
+  &__label
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    transition: transform .2s ease, top .2s ease
+    padding-left: 1rem
+    transform-origin: left top
+    pointer-events: none
+
+    &--textarea
+      top: 1.25rem
+
+    &--active
+      top: -.25rem
+      transform: translateY(0) scale(.7)
+
+    &--checkbox
+      display: block
+      position: static
+      transform: none
+      padding-bottom: .5rem
+
+  &__input
+    border-bottom: 1px solid $c1
+    padding: 1.25rem .75rem .75rem
+    width: 100%
+
+    &:focus,
+    &:active
+      outline: transparent
+
+    &:focus + .form-contact__label
+      top: -.25rem
+      transform: translateY(0) scale(0.7)
+
+    &--error
+      border-color: $danger
+
+    &--error,
+    &--error + .form-contact__label
+      color: $danger
+
+  &__error-message
+    position: absolute
+    bottom: -1.5rem
+    left: 0
+    padding: .25rem .75rem
+    color: $danger
+    font-size: 13px
+
+    .form-contact__group-message &
+      bottom: .75rem
+
+  &__checkbox
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 1rem 0
+
+    &-group
+      position: relative
+
+    &-overlay,
+    &-input
+      position: absolute
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+      width: 1.5rem
+      height: 1.5rem
+
+    &-input
+      opacity: 0
+      z-index: 1
+      cursor: pointer
+
+      &:checked ~ .form-contact__checkbox-overlay,
+      &:hover ~ .form-contact__checkbox-overlay
+
+        &:after
+          transition: opacity .3s ease
+          opacity: 1
+
+      &:checked ~ .form-contact__checkbox-overlay
+        border: 1px solid $white
+
+    &-overlay
+      transition: border .25s ease
+      border: 1px solid $c1
+
+      &:after
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        transition: opacity .2s ease
+        opacity: 0
+        color: $c1
+        font-size: 1.25rem
+        content: '\2713'
+
+    &-label
+      padding-left: 2.75rem
+      text-transform: capitalize
+
+  &__submit-button
+    position: relative
+    transition: background .2s ease, opacity .2s ease
+    // margin: 0 auto
+    border: none
+    background: $c1
+    cursor: pointer
+    padding: 0
+    overflow: hidden
+    color: $white
+
+    &:focus,
+    &:active
+      outline: transparent
+
+    &:hover
+      // background: $c2
+      opacity: .8
+
+    &--sending
+      background: $gray
+      pointer-events: none
+
+    &--success
+      transition: background .2s ease .4s
+      background: $success
+      pointer-events: none
+
+      &:hover
+        background: $success
+
+  &__submit-label
+    display: block
+    position: relative
+    transition: transform .25s ease .25s
+    z-index: 9
+    padding: .5rem 1.75rem
+
+    &--hidden
+      transform: scale(0)
+      transition-delay: 0
+
+  &__submit-check
+    display: flex
+    position: absolute
+    top: 0
+    left: 0
+    align-items: center
+    justify-content: center
+    transform: translateY(.5rem) scale(0)
+    transition: transform .25s ease
+    z-index: 9
+    width: 100%
+    height: 100%
+
+    &--showing
+      transform: translateY(0) scale(1)
+      transition-delay: .4s
+
+  &__modal
+    position: fixed
+    top: 0
+    left: 0
+    transition: opacity .25s ease-in
+    opacity: 0
+    z-index: 9999
+    width: 100vw
+    height: 100%
+    pointer-events: none
+
+    &--open
+      opacity: 1
+      pointer-events: all
+
+    &-overlay
+      position: absolute
+      top: 0
+      left: 0
+      background: rgba($black, .15)
+      width: 100%
+      height: 100%
+
+    &-container
+      display: flex
+      position: absolute
+      top: 50%
+      left: 50%
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      transform: translate(-50%, -50%)
+      background: $white
+      padding: 5rem
+      text-align: center
+
+    &-text
+      font-size: 18px 
+
+    &-close
+      @include phone-lg
+        right: 1rem
+      position: absolute
+      top: 1rem
+      right: 2rem
+      cursor: pointer
+
+    // Styles below here for slotted content
+    &-body
+      padding-top: 1rem
+
+    &-button
+      padding-top: 1rem

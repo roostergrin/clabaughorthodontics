@@ -1,0 +1,8 @@
+.base-lazy-bg(
+  v-if='loaded'
+  role='img'
+  :aria-label='alt'
+  :style="{ backgroundImage: currentImg ? 'url(' + currentImg + ')' : '' }"
+  v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }")
+  transition(name='fade-src-bg-img')
+    .base-lazy-bg__overlay(:style="{ backgroundColor: bgColor }" v-if='loading')
