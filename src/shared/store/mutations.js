@@ -6,7 +6,8 @@ import {
   SET_SCROLLED,
   IS_MOBILE,
   ACTIVE_INDEX,
-  SET_DRAWER
+  SET_DRAWER,
+  LOADING
 } from './mutation-types.js'
 
 const mutations = {
@@ -23,7 +24,7 @@ const mutations = {
   // },
   [GET_PAGES] (state, data) {
     state.pages = data
-    state.loading = false
+    // state.loading = false
   },
   [SET_SCROLLED] (state, data) {
     state.scrolled = data
@@ -36,6 +37,9 @@ const mutations = {
   },
   [SET_DRAWER] (state, data) {
     state.drawer = data
+  },
+  [LOADING] (state, data) {
+    state.loading = data
   }
 }
 

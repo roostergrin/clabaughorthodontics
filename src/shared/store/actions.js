@@ -8,7 +8,8 @@ import {
   SET_SCROLLED,
   IS_MOBILE,
   ACTIVE_INDEX,
-  SET_DRAWER
+  SET_DRAWER,
+  LOADING
 } from './mutation-types'
 
 const actions = {
@@ -80,6 +81,9 @@ const actions = {
   },
   SET_DRAWER ({ commit }, data) {
     commit(SET_DRAWER, data)
+  },
+  LOADING ({ commit }, data) {
+    commit(LOADING, data)
   }
 }
 

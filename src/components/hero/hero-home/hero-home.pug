@@ -1,0 +1,7 @@
+.hero-home
+  video.hero-home__video(:src='props.video' loop muted data-autoplay playsinline ref='video' type='video/mp4' v-load-video='')
+  .hero-home__content
+    .hero-home__container
+      .hero-home__row
+        .hero-home__title.hero-home__title--upper(v-html='props.upper_title')
+        .hero-home__title.hero-home__title--lower(v-html='props.lower_title')    

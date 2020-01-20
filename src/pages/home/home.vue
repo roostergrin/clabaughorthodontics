@@ -2,10 +2,13 @@
 
 <script>
 import TheFooter from 'components/footer/footer'
+import HomeHero from 'components/hero/hero-home/hero-home'
+
 import config from '@/config'
 
 export default {
   components: {
+    HomeHero,
     TheFooter
   },
   data () {

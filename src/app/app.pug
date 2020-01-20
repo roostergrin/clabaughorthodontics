@@ -1,4 +1,6 @@
-#app 
-  TheNavigation
-  router-view
+#app
+  BaseLoader(v-show='$store.state.loading')
+  div.page-wrapper
+    TheNavigation
+    router-view
   

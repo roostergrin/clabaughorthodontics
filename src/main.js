@@ -13,6 +13,14 @@ import { fonts } from './resources/fonts'
 
 Vue.config.productionTip = false
 
+Vue.directive('load-video', {
+  bind (el) {
+    el.addEventListener('loadeddata', (e) => {
+      store.dispatch('LOADING', false)
+    }, false)
+  }
+})
+
 /* eslint-disable no-new */
 new Vue({
   router,

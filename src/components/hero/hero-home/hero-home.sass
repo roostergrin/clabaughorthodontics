@@ -1,0 +1,37 @@
+.hero-home
+  position: relative
+  height: 100%
+
+  &__video
+    width: 100%
+    height: auto
+    overflow: hidden
+
+    @supports (object-fit: cover)
+      height: 100%
+      object-fit: cover
+
+  &__content
+    position: absolute
+    top: 65%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 100%
+
+  &__container
+    @extend .container
+
+  &__row
+    @extend .col-10
+    @extend .col-1--offset
+
+  &__title
+    width: 100%
+    color: $white
+
+    &--upper
+      @extend .hero-text--alt
+
+    &--lower
+      @extend .hero-text
+      text-align: right
