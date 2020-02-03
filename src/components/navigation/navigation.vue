@@ -17,6 +17,9 @@ export default {
       return this.$router.options.routes.filter((link) => {
         return link.navigation
       })
+    },
+    props () {
+      return this.$store.state.app.global
     }
   },
   components: {

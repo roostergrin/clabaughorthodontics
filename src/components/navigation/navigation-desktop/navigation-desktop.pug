@@ -1,3 +1,18 @@
-.navigation-desktop
-  span(v-for='link in links')
-    router-link(:to='link.path', v-html='link.name')
+.navigation-desktop(v-if='props')
+  .navigation-desktop__container
+    .navigation-desktop__item
+      .navigation-desktop__hamburger(@click='toggleDrawer', :class="{ 'navigation-desktop__hamburger--active': $store.state.drawer }")
+        .navigation-desktop__text
+          transition-group(name='fade' tag='div')
+            .navigation-desktop__hamburger-menu(v-show='!$store.state.drawer' key='menu') Menu
+            .navigation-desktop__hamburger-exit(v-show='$store.state.drawer' key='exit') Exit
+        .navigation-desktop__cross
+          span
+          span
+      .navigation-desktop__patient-forms(@click='handleDropdown') Patient forms
+      .navigation-desktop__dropdown(:class="{ 'navigation-desktop__dropdown--active': dropdownActive }")
+        .navigation-desktop__form(v-for='(form, i) in props.patient_forms', :key='`form-${i}`')
+          a.navigation-desktop__form-link(:href='form.link' v-html='form.label' target='_blank')
+        
+                  
+    .navigation-desktop__item

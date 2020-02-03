@@ -3,7 +3,85 @@
   top: 0
   left: 0
   z-index: 99
+  padding: 1rem 0
   width: 100%
 
-  span
-    margin: auto rem-calc(6)
+  &__container
+    @extend .container--large
+    align-items: center
+    justify-content: space-between
+    height: 94px
+
+  &__item
+    display: flex
+
+  &__hamburger
+    display: flex
+    position: relative
+    align-items: center
+    z-index: 9
+    cursor: pointer
+    height: 1rem
+    line-height: 1
+    font-size: 1rem
+
+    &-menu,
+    &-exit
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      text-align: right
+
+  &__text
+    position: relative
+    transition: color .2s ease
+    width: rem-calc(60)
+    height: 100%
+    text-transform: uppercase
+    color: $white
+
+    // .navigation-desktop--active &
+    //   color: $c2
+    //
+    // .navigation-desktop__hamburger--active &
+    //   color: $c2
+
+  &__cross
+    position: relative
+    margin-left: rem-calc(7)
+    width: rem-calc(20)
+    height: rem-calc(7)
+
+    span
+      display: block
+      position: absolute
+      transform: translate(-50%, -50%)
+      transition: all .3s ease
+      background-color: $white
+      width: rem-calc(20)
+      height: 3px
+
+      &:first-child
+        top: 0
+        left: 50%
+
+      &:last-child
+        top: 100%
+        left: 50%
+
+      .navigation-desktop--active &
+        background-color: $c1
+
+      .navigation-desktop__hamburger--active &
+        background-color: $c2
+
+        &:first-child
+          top: 40%
+          left: 0
+          transform: rotate(-45deg) translateZ(0)
+
+        &:last-child
+          top: 40%
+          left: 0
+          transform: rotate(45deg) translateZ(0)
