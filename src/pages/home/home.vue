@@ -18,8 +18,8 @@ export default {
         onLeave: this.handleIndex,
         easeingcss3: 'cubic-bezier(.52, .01, .16, 1)',
         responsiveHeight: 600,
-        responsiveWidth: 880,
-        scrollingSpeed: 750
+        responsiveWidth: 881,
+        scrollingSpeed: 550
       }
     }
   },
