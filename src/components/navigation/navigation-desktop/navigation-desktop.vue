@@ -8,9 +8,6 @@ export default {
     },
     props: {
       type: Object
-    },
-    scrolling: {
-      type: Boolean
     }
   },
   data: () => ({

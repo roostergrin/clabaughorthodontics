@@ -2,6 +2,8 @@
   position: fixed
   top: 0
   left: 0
+  animation: fade-in .4s ease-in forwards .6s
+  opacity: 0
   z-index: 99
   padding: 1rem 0
   width: 100%
@@ -14,12 +16,35 @@
 
   &__item
     display: flex
+    align-items: center
+
+  &__nav-primary
+    display: flex
+    align-items: center
+    transform: none
+    transition: transform .3s cubic-bezier(.215, .61, .355, 1)
+    margin-left: 1rem
+
+    .navigation-desktop--top &
+      transform: translateX(-66px)
+
+  &__logo
+    transition: opacity .2s ease-in .15s
+    opacity: 1
+    width: 50px
+    height: 50px
+    fill: $c1
+
+    .navigation-desktop--top &
+      transition: opacity .2s ease
+      opacity: 0
 
   &__hamburger
     display: flex
     position: relative
     align-items: center
     z-index: 9
+    margin-right: 2rem
     cursor: pointer
     height: 1rem
     line-height: 1
@@ -36,31 +61,32 @@
   &__text
     position: relative
     transition: color .2s ease
-    width: rem-calc(60)
+    width: rem-calc(50)
     height: 100%
     text-transform: uppercase
-    color: $white
+    line-height: 1
+    color: $c1
 
-    // .navigation-desktop--active &
-    //   color: $c2
-    //
-    // .navigation-desktop__hamburger--active &
-    //   color: $c2
+    .navigation-desktop--top &
+      color: $white
+
+    .navigation-desktop__hamburger--active &
+      color: $c1
 
   &__cross
     position: relative
     margin-left: rem-calc(7)
     width: rem-calc(20)
-    height: rem-calc(7)
+    height: rem-calc(8)
 
     span
       display: block
       position: absolute
       transform: translate(-50%, -50%)
       transition: all .3s ease
-      background-color: $white
+      background-color: $c1
       width: rem-calc(20)
-      height: 3px
+      height: 2px
 
       &:first-child
         top: 0
@@ -70,11 +96,11 @@
         top: 100%
         left: 50%
 
-      .navigation-desktop--active &
-        background-color: $c1
+      .navigation-desktop--top &
+        background-color: $white
 
       .navigation-desktop__hamburger--active &
-        background-color: $c2
+        background-color: $c1
 
         &:first-child
           top: 40%
@@ -85,3 +111,32 @@
           top: 40%
           left: 0
           transform: rotate(45deg) translateZ(0)
+
+  &__patient-forms
+    position: relative
+
+  &__forms-btn
+    border-radius: 4px
+    background: $c1
+    padding: rem-calc(14) 1.2rem
+    text-transform: uppercase
+    line-height: 1
+    letter-spacing: .67px
+    color: $white
+    font-size: rem-calc(15)
+
+  &__dropdown
+    position: absolute
+    top: calc(100% + 12px)
+    left: 0
+    opacity: 0
+
+    &--active
+      opacity: 1
+
+  &__form-link
+    display: block
+    margin-bottom: 12px
+    background: $white
+    padding: rem-calc(5) 1rem
+    line-height: 1
