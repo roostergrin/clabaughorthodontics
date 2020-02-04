@@ -9,6 +9,9 @@
   height: 100%
   overflow: hidden
 
+  @media screen and (max-height: 601px)
+    height: calc(100vw * .5625) !important
+
   &__video
     position: absolute
     top: 0
@@ -43,6 +46,11 @@
 
     .fp-completely &
       opacity: 1
+
+    &--drawer
+      .fp-completely &
+        transition: opacity .2s ease
+        opacity: 0
 
   &__content
     position: absolute

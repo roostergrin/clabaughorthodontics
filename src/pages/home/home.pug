@@ -1,4 +1,4 @@
-main.pages-home(v-if='props')
+main.pages-home(v-if='props', :class="{ 'pages-home--drawer': $store.state.drawer }")
   full-page#fullpage(:options='fullpageOptions', ref='home')
     .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
       HomeHero(:props='props.hero')

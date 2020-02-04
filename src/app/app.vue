@@ -1,6 +1,7 @@
 <template lang="pug" src="./app.pug"></template>
 
 <script>
+import TheMenu from 'components/menu/menu'
 import TheNavigation from 'components/navigation/navigation'
 
 export default {
@@ -18,6 +19,7 @@ export default {
     }
   },
   components: {
+    TheMenu,
     TheNavigation
   }
 }
