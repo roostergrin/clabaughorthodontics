@@ -1,5 +1,6 @@
 .navigation-desktop(v-if='props && !$store.state.loading', :class="{ 'navigation-desktop--top': $store.state.currIndex === 0}")
   .navigation-desktop__container
+    
     .navigation-desktop__item
       BaseIcon.navigation-desktop__logo(name='logo-icon')
       .navigation-desktop__nav-primary  
@@ -14,8 +15,10 @@
         .navigation-desktop__patient-forms
           .navigation-desktop__forms-btn(@click='handleDropdown') Patient forms
           .navigation-desktop__dropdown(:class="{ 'navigation-desktop__dropdown--active': dropdownActive }")
-            .navigation-desktop__form(v-for='(form, i) in props.patient_forms', :key='`form-${i}`')
+            .navigation-desktop__form(v-for='(form, i) in props.patient_forms', :key='`form-${i}`', :style="{ transitionDelay: (i * .15) + 's' }")
               a.navigation-desktop__form-link(:href='form.link' v-html='form.label' target='_blank')
         
-                  
     .navigation-desktop__item
+      .navigation-desktop__nav-secondary
+        .navigation-desktop__consult-btn(@click='handleRoute(1)') Request Consultation
+        a.navigation-desktop__phone(:href="'tel:1-'+ props.phone" v-html='props.phone')    

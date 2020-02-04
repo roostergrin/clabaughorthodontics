@@ -26,6 +26,17 @@ export default {
   computed: {
     props () {
       return this.$store.state.pages.home
+    },
+    currEl () {
+      return this.$store.state.currIndex
+    }
+  },
+  watch: {
+    'currEl': function () {
+      let num = this.currEl + 1
+      if (!this.$store.state.mobile && this.$el.clientWidth >= 880) {
+        this.$refs.home.api.moveTo(num)
+      }
     }
   },
   methods: {

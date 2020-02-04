@@ -5,18 +5,16 @@
   animation: fade-in .4s ease-in forwards .6s
   opacity: 0
   z-index: 99
-  padding: 1rem 0
+  padding: 2rem 0
   width: 100%
 
   &__container
     @extend .container--large
-    align-items: center
     justify-content: space-between
-    height: 94px
 
   &__item
     display: flex
-    align-items: center
+    align-items: flex-start
 
   &__nav-primary
     display: flex
@@ -27,6 +25,9 @@
 
     .navigation-desktop--top &
       transform: translateX(-66px)
+
+  &__nav-secondary
+    text-align: center
 
   &__logo
     transition: opacity .2s ease-in .15s
@@ -57,6 +58,14 @@
       left: 0
       width: 100%
       text-align: right
+
+    &:hover
+      .navigation-desktop__text
+        color: $c2
+      .navigation-desktop__cross
+        span
+          background: $c2  
+
 
   &__text
     position: relative
@@ -116,14 +125,7 @@
     position: relative
 
   &__forms-btn
-    border-radius: 4px
-    background: $c1
-    padding: rem-calc(14) 1.2rem
-    text-transform: uppercase
-    line-height: 1
-    letter-spacing: .67px
-    color: $white
-    font-size: rem-calc(15)
+    @extend .button
 
   &__dropdown
     position: absolute
@@ -134,9 +136,34 @@
     &--active
       opacity: 1
 
+  &__form
+    transform: translateY(-1rem)
+    transition: transform .2s ease, opacity .2s ease-in
+    opacity: 0
+
+    .navigation-desktop__dropdown--active &
+      transform: none
+      opacity: 1
+
   &__form-link
     display: block
     margin-bottom: 12px
     background: $white
     padding: rem-calc(5) 1rem
     line-height: 1
+
+  &__consult-btn
+    @extend .button
+    margin-bottom: .5rem
+    background: $c5
+
+  &__phone
+    transition: color .2s ease
+    color: $c1
+    font-size: rem-calc(18)
+
+    .navigation-desktop--top &
+      color: $white
+
+    &:hover
+      color: $c2

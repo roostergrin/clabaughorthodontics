@@ -25,6 +25,9 @@ export default {
     },
     handleDropdown () {
       this.dropdownActive = !this.dropdownActive
+    },
+    handleRoute (route) {
+      this.$store.dispatch('ACTIVE_INDEX', route)
     }
   }
 }
