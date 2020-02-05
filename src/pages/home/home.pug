@@ -3,7 +3,17 @@ main.pages-home(v-if='props', :class="{ 'pages-home--drawer': $store.state.drawe
     .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
       HomeHero(:props='props.hero')
     .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
-      WelcomeSection(:props='props.welcome')    
+      WelcomeSection(:props='props.welcome')
+    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+      TeamSection(:props='props.team')
+    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+      TechnologySection(:props='props.technology')
+    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+      TestimonialsSection(:props='props.testimonials')
+    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+      WhySection(:props='props.why_us')
+    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+      ContactSection(:props='props.contact')                
     .section.fp-auto-height
       TheFooter  
   

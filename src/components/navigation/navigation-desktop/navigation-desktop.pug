@@ -2,7 +2,7 @@
   .navigation-desktop__container
     
     .navigation-desktop__item
-      BaseIcon.navigation-desktop__logo(name='logo-icon')
+      BaseIcon.navigation-desktop__logo(name='logo-icon', @click.native='handleRoute(0)')
       .navigation-desktop__nav-primary  
         .navigation-desktop__hamburger(@click='toggleDrawer', :class="{ 'navigation-desktop__hamburger--active': $store.state.drawer }")
           .navigation-desktop__text
@@ -20,5 +20,5 @@
         
     .navigation-desktop__item
       .navigation-desktop__nav-secondary
-        .navigation-desktop__consult-btn(@click='handleRoute(1)') Request Consultation
+        .navigation-desktop__consult-btn(@click='handleRoute(6)') Request Consultation
         a.navigation-desktop__phone(:href="'tel:1-'+ props.phone" v-html='props.phone')    

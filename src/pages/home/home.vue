@@ -1,17 +1,27 @@
 <template lang="pug" src="./home.pug"></template>
 
 <script>
+import ContactSection from 'custom/custom-home-contact/custom-home-contact'
 import HomeHero from 'components/hero/hero-home/hero-home'
+import TeamSection from 'custom/custom-home-team/custom-home-team'
+import TechnologySection from 'custom/custom-home-technology/custom-home-technology'
+import TestimonialsSection from 'custom/custom-home-testimonials/custom-home-testimonials'
 import TheFooter from 'components/footer/footer'
 import WelcomeSection from 'custom/custom-home-welcome/custom-home-welcome'
+import WhySection from 'custom/custom-home-why/custom-home-why'
 
 import config from '@/config'
 
 export default {
   components: {
+    ContactSection,
     HomeHero,
+    TeamSection,
+    TechnologySection,
+    TestimonialsSection,
     TheFooter,
-    WelcomeSection
+    WelcomeSection,
+    WhySection
   },
   data () {
     return {
