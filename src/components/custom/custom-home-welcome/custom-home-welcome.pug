@@ -1,0 +1,17 @@
+section#welcome.custom-home-welcome
+  .custom-home-welcome__section-heading(v-html='props.title')
+  .custom-home-welcome__container
+    .custom-home-welcome__left
+      .custom-home-welcome__video-container
+        .custom-home-welcome__play-btn(@click='playVideo', :class="{ 'custom-home-welcome__play-btn--hide': videoPlaying }")
+          BaseIcon.custom-home-welcome__icon(name='triangle')
+        BaseLazyImg.custom-home-welcome__thumb(:src='props.thumb', :class="{ 'custom-home-welcome__thumb--hide': videoPlaying }" image-background, :bgColor="'#fafafa'")
+        video.custom-home-welcome__video(:src='props.video' controls controlsList='nodownload' ref='video' type='video/mp4')        
+    .custom-home-welcome__right
+      article.custom-home-welcome__content
+        h1.custom-home-welcome__title(v-html='props.header')
+        .custom-home-welcome__text(v-html='props.text')
+    .custom-home-welcome__logos
+      img.custom-home-welcome__logo(v-for='(logo, i) in props.logos', :key='`logo-${i}`', :src='logo.image', alt='logo', :style="{ transitionDelay: ((i * .035) + .2) + 's' }")
+  .custom-home-welcome__down(@click='moveDown')
+    BaseIcon.custom-home-welcome__arrow(name='arrow')              

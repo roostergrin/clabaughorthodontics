@@ -1,0 +1,189 @@
+.custom-home-welcome
+  @include ipad-pro
+    padding: 4rem 0 5rem
+  @include tablet-md
+    padding: 3rem 0
+  @include nexus
+    padding: 2rem 0
+  display: flex
+  position: relative
+  align-items: center
+  justify-content: center
+  height: 100%
+
+  &__section-heading
+    @include ipad-pro
+      display: none
+    @include tablet-md
+      display: none
+    position: absolute
+    top: 2.5rem
+    left: 50%
+    transform: translateX(-50%)
+    text-transform: uppercase
+    letter-spacing: 2px
+    color: $c1
+    font-size: 24px
+
+  &__container
+    @extend .container
+
+  &__left, &__right
+    @extend .col-6
+    @include tablet-md
+      width: 100%
+
+  &__left
+    @include desktop
+      width: calc((7/12) * 100%)
+    @include tablet-lg
+      display: flex
+      align-items: center
+
+  &__right
+    @include desktop
+      width: calc((5/12) * 100%)
+    @include tablet-md
+      order: -1
+      margin-bottom: 2rem
+      padding: 0
+    display: flex
+    align-items: center
+
+  &__video-container
+    @include desktop
+      height: calc((1440px * (7/12)) * .5625)
+    @include laptop-sm
+      height: calc((50vw - 4rem) * .5625)
+    @include tablet-md
+      margin: 0 auto
+      width: 50vw
+    @include tablet
+      width: 100%
+      max-width: 600px
+      height: calc(600px * .5625)
+    @include nexus
+      height: calc((100vw - 2rem) * .5625)
+    position: relative
+    transform: translateX(-2rem)
+    transition: opacity .35s ease-in, transform .4s cubic-bezier(.25, .46, .45, .94)
+    opacity: 0
+    width: 100%
+    height: calc((1154px * .5) * .5625)
+    overflow: hidden
+
+    .fp-completely &,
+    .is-mobile &
+      transform: none
+      opacity: 1
+
+  &__thumb
+    @extend .image--bg
+    transition: opacity .25s ease
+    z-index: 1
+
+    &--hide
+      opacity: 0
+      pointer-events: none
+
+  &__video
+    width: calc(100% - 1px)
+    height: auto
+    overflow: hidden
+
+    @supports (object-fit: cover)
+      height: calc(100% - 1px)
+      object-fit: cover
+
+    &:focus
+      outline: none
+
+  &__play-btn
+    @extend .image--centered
+    transition: opacity .3s ease, background .2s ease
+    z-index: 2
+    border-radius: 50%
+    background: rgba($c6, .7)
+    width: rem-calc(80)
+    height: rem-calc(80)
+
+    &--hide
+      opacity: 0
+      pointer-events: none
+
+    &:hover
+      background: rgba($black, .9)
+      cursor: pointer
+
+      .block-video__icon
+        fill: $c3
+
+  &__icon
+    @extend .image--centered
+    left: 54.5%
+    transition: fill .2s ease
+    width: 30%
+    height: 30%
+    fill: $white
+
+  &__logos
+    @extend .col-6
+    @include tablet-md
+      margin: 2rem auto 0
+      width: 80%
+    @include nexus
+      flex-wrap: wrap
+      margin-top: 1rem
+    display: flex
+    justify-content: space-between
+    margin-top: 2rem
+
+  &__logo
+    @include desktop
+      height: 80px
+    @include laptop-sm
+      height: 60px
+    @include nexus
+      margin: 1rem auto 0
+      height: 70px
+    transition: opacity .35s ease-in
+    opacity: 0
+    background-size: contain
+    width: auto
+    height: 70px
+
+    .fp-completely &,
+    .is-mobile &
+      opacity: 1
+
+  &__content
+    @include nexus
+      padding: 0
+    transition: opacity .35s ease-in .15s
+    opacity: 0
+    padding: 0 1rem
+
+    .fp-completely &,
+    .is-mobile &
+      opacity: 1
+
+  &__title
+    @include laptop-sm
+      font-size: 26px
+    @include nexus
+      font-size: 22px
+    margin-bottom: .75rem
+    color: $c1
+
+  &__down
+    @include tablet-md
+      display: none
+    position: absolute
+    bottom: 2rem
+    left: 50%
+    transform: translateX(-50%)
+
+  &__arrow
+    width: 2rem
+    height: 1rem
+    fill: $c6
