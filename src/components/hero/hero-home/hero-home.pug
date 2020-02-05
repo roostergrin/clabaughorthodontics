@@ -1,4 +1,4 @@
-.hero-home
+section.hero-home
   .hero-home__overlay
   BaseIcon.hero-home__logo(name='logo-white', :class="{ 'hero-home__logo--drawer': $store.state.drawer }")  
   video.hero-home__video(:src='props.video' loop muted data-autoplay playsinline ref='video' type='video/mp4' v-load-video='')
@@ -6,4 +6,6 @@
     .hero-home__container
       .hero-home__row
         .hero-home__title.hero-home__title--upper(v-html='props.upper_title')
-        .hero-home__title.hero-home__title--lower(v-html='props.lower_title')    
+        .hero-home__title.hero-home__title--lower(v-html='props.lower_title')
+  .hero-home__down(@click='moveDown')
+    BaseIcon.hero-home__arrow(name='arrow')            

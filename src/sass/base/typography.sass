@@ -3,7 +3,7 @@
 
 body
   @include desktop
-    font-size: rem-calc(17)
+    font-size: rem-calc(18)
   @include phone
     font-size: 14px
   text-rendering: optimizeLegibility
@@ -11,11 +11,13 @@ body
   letter-spacing: .467px
   color: $c6
   font-family: $font-body
-  font-size: rem-calc(15)
+  font-size: rem-calc(16)
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
 h1
+  @include desktop
+    font-size: rem-calc(32)
   text-transform: uppercase
   line-height: 1.25
   letter-spacing: 3px

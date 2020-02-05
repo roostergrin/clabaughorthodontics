@@ -44,6 +44,12 @@
     opacity: 1
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
 
+@keyframes slide-in
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(105%)
+
 // --------------------------------------------------------
 // Modal Effects in addition to transitions
 // --------------------------------------------------------
@@ -61,3 +67,15 @@
   100%
     transform: scaleX(1) scaleY(1)
     opacity: 1
+
+@keyframes bounce
+  0%
+    transform: translate(-50%, 0)
+  35%
+    transform: translate(-50%, -12px)
+  50%
+    transform: translate(-50%, 0)
+  75%
+    transform: translate(-50%, -8px)
+  100%
+    transform: translate(-50%, 0)

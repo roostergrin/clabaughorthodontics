@@ -1,15 +1,17 @@
 <template lang="pug" src="./home.pug"></template>
 
 <script>
-import TheFooter from 'components/footer/footer'
 import HomeHero from 'components/hero/hero-home/hero-home'
+import TheFooter from 'components/footer/footer'
+import WelcomeSection from 'custom/custom-home-welcome/custom-home-welcome'
 
 import config from '@/config'
 
 export default {
   components: {
     HomeHero,
-    TheFooter
+    TheFooter,
+    WelcomeSection
   },
   data () {
     return {

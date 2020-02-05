@@ -2,6 +2,8 @@ main.pages-home(v-if='props', :class="{ 'pages-home--drawer': $store.state.drawe
   full-page#fullpage(:options='fullpageOptions', ref='home')
     .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
       HomeHero(:props='props.hero')
+    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+      WelcomeSection(:props='props.welcome')    
     .section.fp-auto-height
       TheFooter  
   

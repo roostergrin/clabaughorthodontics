@@ -95,3 +95,22 @@
       .fp-completely &
         transform: none
         opacity: 1
+
+  &__down
+    @include nexus
+      display: none
+    position: absolute
+    bottom: 1rem
+    left: 50%
+    transform: translate(-50%, 0)
+    animation: bounce 1.75s ease infinite
+    z-index: 2
+    cursor: pointer
+
+    &:hover
+      animation-play-state: paused
+
+  &__arrow
+    width: 1.75rem
+    height: 1rem
+    fill: $white
