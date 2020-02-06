@@ -30,7 +30,7 @@
     text-align: center
 
   &__logo
-    transition: opacity .2s ease-in .15s
+    transition: opacity .2s ease-in .15s, fill .2s ease
     opacity: 1
     width: 50px
     height: 50px
@@ -39,6 +39,9 @@
     .navigation-desktop--top &
       transition: opacity .2s ease
       opacity: 0
+
+    .navigation-desktop--white &
+      fill: $white
 
   &__hamburger
     display: flex
@@ -64,7 +67,7 @@
         color: $c2
       .navigation-desktop__cross
         span
-          background: $c2  
+          background: $c2
 
 
   &__text
@@ -76,7 +79,8 @@
     line-height: 1
     color: $c1
 
-    .navigation-desktop--top &
+    .navigation-desktop--top &,
+    .navigation-desktop--white &
       color: $white
 
     .navigation-desktop__hamburger--active &
@@ -105,7 +109,8 @@
         top: 100%
         left: 50%
 
-      .navigation-desktop--top &
+      .navigation-desktop--top &,
+      .navigation-desktop--white &
         background-color: $white
 
       .navigation-desktop__hamburger--active &
@@ -159,10 +164,11 @@
 
   &__phone
     transition: color .2s ease
-    color: $c1
+    color: $c6
     font-size: rem-calc(18)
 
-    .navigation-desktop--top &
+    .navigation-desktop--top &,
+    .navigation-desktop--white &
       color: $white
 
     &:hover

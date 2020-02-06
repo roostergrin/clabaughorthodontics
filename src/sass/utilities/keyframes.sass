@@ -46,9 +46,19 @@
 
 @keyframes slide-in
   0%
-    transform: translateX(0)
+    transform: translateX(-100%)
   100%
-    transform: translateX(105%)
+    transform: translateX(100%)
+
+@keyframes visible
+  0%
+    transform: translateX(-5%)
+    visibility: visible
+  50%
+    visibility: visible
+  100%
+    transform: translateX(0)
+    visibility: visible
 
 // --------------------------------------------------------
 // Modal Effects in addition to transitions

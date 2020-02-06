@@ -1,2 +1,19 @@
 .custom-home-technology
-  .custom-home-technology__title technology & appliances
+  .custom-home-technology__title(v-html='props.title')
+  .custom-home-technology__container
+    .custom-home-technology__row
+      .custom-home-technology__image-container(:class="{ 'custom-home-technology__image-container--sliding': sliding }", :style="{ height: (maxHeight) + 'px' }")
+        BaseLazyImg.custom-home-technology__image(v-for='(image, i) in props.list', :key='`image-${i}`', :src='image.image', :class="{ 'custom-home-technology__image--active': currentSlide === i}" image-background)  
+      .custom-home-technology__text-container(:style="{ height: (maxHeight) + 'px' }")
+        .custom-home-technology__content(v-for='(content, i) in props.list', :key='`text-${i}`', :class="{ 'custom-home-technology__content--active': currentSlide === i }", ref='content')
+          .custom-home-technology__heading(v-html='content.title')
+          .custom-home-technology__text(v-html='content.text')
+    .custom-home-technology__button.custom-home-technology__button--prev(@click='changeSlide("prev")')
+      BaseIcon.custom-home-technology__icon(name='arrow')
+    .custom-home-technology__button.custom-home-technology__button--next(@click='changeSlide("next")')
+      BaseIcon.custom-home-technology__icon(name='arrow')        
+    .custom-home-technology__row--lower  
+      .custom-home-technology__navigation
+        .custom-home-technology__dot(v-for='(dot, i) in props.list.length', :key='`dot-${i}`', :class="{ 'custom-home-technology__dot--active': currentSlide === i}")
+    .custom-home-technology__down(@click='moveDown')
+      BaseIcon.custom-home-technology__arrow(name='arrow')      

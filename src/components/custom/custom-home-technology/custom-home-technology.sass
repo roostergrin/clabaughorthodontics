@@ -1,3 +1,183 @@
 .custom-home-technology
+  background: $c2
+  height: 100%
+
   &__title
+    @include ipad-pro
+      display: none
+    @include tablet-md
+      display: none
+    position: absolute
+    top: 2.5rem
+    left: 50%
+    transform: translateX(-50%)
+    text-transform: uppercase
+    letter-spacing: 2px
+    color: $white
+    font-size: 24px
+
+  &__container
+    @extend .container
+    align-items: flex-end
+    transition: opacity .3s ease-in
+    // opacity: 0
+    height: 100%
+
+    // .fp-completely &
+    //   opacity: 1
+
+  &__row
+    @extend .col-10
+    @extend .col-1--offset
+    @include laptop
+      margin: 2rem 2rem 0
+      width: 100%
+    display: flex
+    flex-wrap: wrap
+    margin-top: 2rem
+    box-shadow: $bs2
+    padding: 0
+
+    &--lower
+      @extend .col-6
+      @extend .col-5--offset
+      // position: absolute
+      align-self: flex-start
+      margin-top: 2rem
+      padding: 0
+      height: 1rem
+
+  &__image-container
+    position: relative
+    background: $c7
+    width: 40%
+    height: 100%
+    overflow: hidden
+
+    &:before
+      position: absolute
+      top: 0
+      left: 0
+      transform: translateX(-100%)
+      z-index: 1
+      background-color: $c7
+      width: 100%
+      height: 100%
+      content: ''
+
+    &--sliding
+      &:before
+        animation: slide-in 1s cubic-bezier(.39, .575, .28, .995) forwards
+
+  &__text-container
+    position: relative
+    background: $c7
+    width: 60%
+
+  &__image
+    @extend .image--bg
+    transition: transform .65s cubic-bezier(.39, .575, .28, .995), opacity .05s linear .25s
+    visibility: visible
+    opacity: 0
+
+    &--active
+      animation: visible 1s cubic-bezier(.39, .575, .28, .995) forwards
+      animation-delay: .25s
+      opacity: 1
+
+  &__content
+    @include desktop
+      padding: 6rem 3rem
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    transition: opacity .6s ease-in
+    opacity: 0
+    padding: 4rem 2rem
+    width: 100%
+
+    &--active
+      opacity: 1
+
+  &__heading
     @extend h1
+    margin-bottom: 1rem
+    color: $c1
+
+  &__button
+    @include laptop-sm
+      width: 3rem
+      height: 3rem
+    display: flex
+    position: absolute
+    top: 50%
+    align-items: center
+    justify-content: center
+    transform: translateY(-50%)
+    transition: background .2s ease
+    border-radius: 50%
+    background: $c7
+    cursor: pointer
+    width: 4rem
+    height: 4rem
+
+    &--prev
+      @include laptop
+        left: .5rem
+      left: 0
+
+    &--next
+      @include laptop
+        right: .5rem
+      right: 0
+
+    &:hover
+      background: rgba($c7, .9)
+      .custom-home-technology__icon
+        fill: $c5
+
+  &__icon
+    @include desktop
+      height: 1.2rem
+    @include laptop-sm
+      width: 1.5rem
+      height: 1.25rem
+    transition: fill .2s ease
+    width: 2rem
+    height: 1rem
+    fill: $c2
+
+    .custom-home-technology__button--prev &
+      transform: rotate(90deg)
+
+    .custom-home-technology__button--next &
+      transform: rotate(-90deg)
+
+  &__navigation
+    display: flex
+    justify-content: center
+
+  &__dot
+    transition: background .2s ease
+    margin: auto 6px
+    border-radius: 50%
+    background: $c7
+    width: 10px
+    height: 10px
+
+    &--active
+      background: $c3
+
+  &__down
+    @include tablet-md
+      display: none
+    position: absolute
+    bottom: 2rem
+    left: 50%
+    transform: translateX(-50%)
+
+  &__arrow
+    width: 2rem
+    height: 1rem
+    fill: $white
