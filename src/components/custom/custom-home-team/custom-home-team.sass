@@ -1,3 +1,126 @@
 .custom-home-team
+  @include ipad-pro
+    height: 800px
+  @include tablet-md
+    position: relative
+    height: 2000px
+  height: 100%
+  overflow: hidden
+  @media screen and (max-height: 600px)
+    height: 800px
+
   &__title
     @extend h1
+    position: absolute
+    top: 3rem
+    left: 50%
+    transform: translate(-50%, -50%)
+    color: $c1
+
+  &__container
+    @extend .container--large
+    @include desktop
+      align-items: center
+    @include tablet-md
+      padding: 0
+    align-items: center
+    justify-content: center
+    width: 100%
+    height: 100%
+
+  &__person
+    @extend .image--bg
+    @include desktop
+      margin: 0 -3rem
+      width: calc(1920px / 7)
+      height: calc((1920px / 7) * 2.69)
+    @include laptop
+      width: calc(100vw / 5.5)
+      height: calc((100vw / 5.5) * 2.69)
+    // @include tablet-md
+    //   width: calc(100vw / 7)
+    //   height: calc((100vw/7)*2.69)
+    display: inline-block
+    transform: scale(1.1)
+    transition: filter .2s ease
+    margin: 0 -2.25rem
+    background-repeat: no-repeat
+    background-position: center top
+    background-size: cover
+    cursor: pointer
+    width: calc(1600px / 7)
+    height: calc((1600px / 7) * 2.69)
+    filter: grayscale(.85)
+
+    &:nth-child(4)
+      @include desktop
+        transform: translateY(2rem) scale(1.1)
+        max-height: 100%
+      @include laptop
+        height: calc((100vw / 5.5) * 2.69)
+        max-height: 100%
+      width: calc(1600px / 6.6)
+      max-height: 580px
+
+    &:hover,
+    &--active
+      filter: none
+
+    // @media screen and (max-height: 750px)
+    //   height: 70vh
+
+  &__content-container
+    @include tablet-md
+      height: 600px !important
+      overflow: scroll
+    position: absolute
+    bottom: 0
+    left: 0
+    transform: translateY(100%)
+    transition: transform .3s cubic-bezier(.39, .575, .28, .995)
+    z-index: 10
+    box-shadow: 0 -13px 27px -5px rgba(50, 50, 93, .09), 0 -8px 16px -8px rgba(0, 0, 0, .15)
+    background: $c8
+    width: 100%
+
+    .fp-completely &,
+    .is-mobile &
+      transform: none
+
+  &__content
+    @extend .container
+    position: relative
+    height: 100%
+
+  &__bio
+    @include laptop
+      font-size: 15px
+    position: absolute
+    top: 2rem
+    left: 0
+    opacity: 0
+    padding: 0 2rem
+    width: 100%
+    height: 100%
+
+    &--active
+      opacity: 1
+
+  &__name
+    @extend h1
+    margin-bottom: .5rem
+    color: $c1
+
+  &__row
+    @include tablet-md
+      margin-bottom: 0
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-bottom: 1rem
+
+    p
+      @include tablet-md
+        margin: .5rem 0
+        width: 100%
+      width: 48.5%

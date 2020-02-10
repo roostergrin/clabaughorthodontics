@@ -1,2 +1,12 @@
-.custom-home-team
-  .custom-home-team__title the team
+section.custom-home-team
+  .custom-home-team__title(v-html='props.title')
+  .custom-home-team__container
+    .custom-home-team__team-container
+      BaseLazyImg.custom-home-team__person(v-for='(person, i) in props.team_members', :key='`person-${i}`', :src='person.image', :style="{ zIndex: i * 1}", @mouseover.native='handleHover(i)', :class="{ 'custom-home-team__person--active': currIndex === i }")
+  .custom-home-team__content-container(:style="{ height: (maxHeight + 128) + 'px'}")
+    .custom-home-team__content
+      .custom-home-team__bio(v-for='(bio, i) in props.team_members', :key='`bio-${i}`', :class="{ 'custom-home-team__bio--active': currIndex === i }" )
+        .custom-home-team__name(v-html='bio.name')
+        .custom-home-team__text(v-html='bio.bio' ref='bio')  
+            
+    
