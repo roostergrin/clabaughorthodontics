@@ -1,4 +1,81 @@
 .custom-home-contact
+  height: 100%
+
+  &__overlay
+    @extend .image--bg
+    z-index: 1
+    background: $ol2
+
+  &__bg
+    @extend .image--bg
+
+  &__container
+    @extend .container
+    align-items: flex-end
+    z-index: 3
+    padding-bottom: 3rem
+    height: 100%
+
+  &__information-container
+    position: absolute
+    bottom: 3rem
+    left: 1rem
+    transform: translateX(calc(-100% - 2rem))
+    transition: transform .3s cubic-bezier(.39, .575, .28, .995)
+    z-index: 3
+    box-shadow: $bs2
+    background: $c1
+    padding: 2rem
+    width: 33%
+    max-width: 421px
+
+    .fp-completely &,
+    .custom-home-contact__footer &
+      transform: none
+
+  &__item
+    display: flex
+
+    &:not(:last-child)
+      margin-bottom: 1rem
+
+  &__icon
+    width: 1rem
+    height: 1rem
+    fill: $white
+
+  &__phone, &__address, &__email
+    margin-left: rem-calc(14)
+    width: 100%
+    line-height: 1
+    color: $white
+
+  &__address
+    line-height: 1.25
+
+    .directions
+      font-size: 15px
+
+  &__form-container
+    @extend .col-4
+    @extend .col-4--offset
+    @include laptop
+      margin-left: calc((5/12) * 100%)
+      width: 50%
+    transition: opacity .3s ease-in .1s
+    opacity: 0
+    box-shadow: $bs2
+    background: $white
+    padding: 2rem
+
+    .fp-completely &,
+    .custom-home-contact__footer &
+      opacity: 1
 
   &__title
-    @extend h1
+    text-align: center
+    line-height: 1.15
+    letter-spacing: 2px
+    color: $c2
+    font-size: 34px
+    font-weight: bold

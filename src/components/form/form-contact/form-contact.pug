@@ -2,23 +2,18 @@
   form.form-contact__form
     
     .form-contact__group
-      input.form-contact__input(name='firstName', v-model='firstName', v-validate="'required|alpha_spaces'", :class="{ 'form-contact__input--error': errors.has('firstName') }", type='text')
-      label.form-contact__label(:class="{ 'form-contact__label--active': firstName }") First Name *
-      .form-contact__error-message(v-show="errors.has('firstName')") Your first name is required.
+      label.form-contact__label Your Name *
+      input.form-contact__input(name='fullName', v-model='fullName', v-validate="'required'", :class="{ 'form-contact__input--error': errors.has('fullName') }", type='text')
+      .form-contact__error-message(v-show="errors.has('fullName')") Your name is required.
       
     .form-contact__group
-      input.form-contact__input(name='lastName', v-model='lastName', v-validate="'required|alpha_spaces'", :class="{ 'form-contact__input--error': errors.has('lastName') }", type='text')
-      label.form-contact__label(:class="{ 'form-contact__label--active': lastName }") Last Name *
-      .form-contact__error-message(v-show="errors.has('lastName')") Your last name is required.
-    
-    .form-contact__group
+      label.form-contact__label Your Email *
       input.form-contact__input(name='clientEmail', v-model='clientEmail', v-validate="'required|email'", :class="{ 'form-contact__input--error': errors.has('clientEmail') }")
-      label.form-contact__label(:class="{ 'form-contact__label--active': clientEmail }") Your Email Address *
       .form-contact__error-message(v-show="errors.has('clientEmail')")  Please input a valid email adress.
     
     .form-contact__group
+      label.form-contact__label Your Phone Number *
       input.form-contact__input(name='clientPhone', v-model='clientPhone', v-validate="'required|numeric'", :class="{ 'form-contact__input--error': errors.has('clientPhone') }")
-      label.form-contact__label(:class="{ 'form-contact__label--active': clientPhone }") Your Phone Number *
       .form-contact__error-message(v-show="errors.has('clientPhone')")  Please input a valid phone number.
       
     .form-contact__group
@@ -33,8 +28,8 @@
           label.form-contact__checkbox-label Yes, I am a first time patient!
     
     .form-contact__group
-      textarea.form-contact__input.form-contact__input--textarea(name='clientMessage', v-model='clientMessage' rows='5')
       label.form-contact__label.form-contact__label--textarea(:class="{ 'form-contact__label--active': clientMessage }") Message
+      textarea.form-contact__input.form-contact__input--textarea(name='clientMessage', v-model='clientMessage' rows='4')
       .form-contact__error-message(v-show="errors.has('clientMessage')")  Please fill out your message
     
     .form-contact__group.form-contact__group--button

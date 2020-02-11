@@ -3,7 +3,7 @@
   .custom-home-why__container
     .custom-home-why__title(v-html='props.title')
     .custom-home-why__item-container
-      .custom-home-why__item(v-for='(item, i) in props.items', :key='`why-item-${i}`', :style="{ transitionDelay: (i * .12) + 's' }")
+      .custom-home-why__item(v-for='(item, i) in props.items', :key='`why-item-${i}`', :style="{ transitionDelay: ((i * .1) + .25) + 's' }")
         BaseIcon.custom-home-why__icon(:name='item.icon')
         h5.custom-home-why__heading(v-html='item.heading')
         .custom-home-why__text(v-html='item.text')  

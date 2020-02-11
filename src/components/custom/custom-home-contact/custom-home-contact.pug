@@ -1,2 +1,21 @@
-.custom-home-contact
-  .custom-home-contact__title Contact Page
+.custom-home-contact(:class="{ 'custom-home-contact__footer': $store.state.currIndex === 7 }")
+  .custom-home-contact__overlay
+  BaseLazyBg.custom-home-contact__bg(:src='props.image')
+  .custom-home-contact__information-container
+    .custom-home-contact__content
+      a.custom-home-contact__item(:href='content.address_link' target='_blank' rel='noreferrer noopener')
+        BaseIcon.custom-home-contact__icon(name='location')
+        .custom-home-contact__address(v-html='content.address')
+      a.custom-home-contact__item(:href='"tel:1-" + content.phone')
+        BaseIcon.custom-home-contact__icon(name='phone')
+        .custom-home-contact__phone(v-html='content.phone')
+      a.custom-home-contact__item(:href='"mailto:" + content.email')
+        BaseIcon.custom-home-contact__icon(name='envelope')
+        .custom-home-contact__email(v-html='content.email')
+          
+  .custom-home-contact__container
+    .custom-home-contact__form-container
+      .custom-home-contact__title Let's Get Started!
+      FormContact            
+            
+  

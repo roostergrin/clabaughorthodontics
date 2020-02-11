@@ -6,8 +6,7 @@ import axios from 'axios'
 export default {
   data: () => {
     return {
-      firstName: '',
-      lastName: '',
+      fullName: '',
       clientEmail: '',
       clientPhone: '',
       isFirstTime: false,
@@ -44,8 +43,7 @@ export default {
         this.firstTimeMessage = 'Yes, I am a first time patient'
       }
       axios.post(this.postUrl, {
-        firstName: this.firstName,
-        lastName: this.lastName,
+        fullName: this.fullName,
         clientEmail: this.clientEmail,
         clientPhone: this.clientPhone,
         firstTime: this.firstTimeMessage,
@@ -57,7 +55,7 @@ export default {
             this.modalOpen = true
           }, 750)
           setTimeout(() => {
-            this.firstName = ''
+            this.fullName = ''
             this.lastName = ''
             this.clientEmail = ''
             this.clientPhone = ''
