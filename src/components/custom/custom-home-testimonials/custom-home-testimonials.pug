@@ -5,7 +5,7 @@
     .custom-home-testimonials__testimonials-container
         .custom-home-testimonials__title(v-html='props.title')
         .custom-home-testimonials__stars
-          BaseIcon.custom-home-testimonials__star(v-for='star in 5' name='star')
+          BaseIcon.custom-home-testimonials__star(v-for='(star, i) in 5', :key='`star-${i}`' name='star')
         .custom-home-testimonials__content(:style="{ height: (maxHeight + 80) + 'px'}")
           .custom-home-testimonials__testimonial(v-for='(testimonial, i) in props.testimonials', :key='`testimonial-${i}`', :class="{ 'custom-home-testimonials__testimonial--active': currIndex === i}")
             .custom-home-testimonials__text-container(:style="{ height: (maxHeight + 16) + 'px'}")
@@ -17,7 +17,7 @@
     .custom-home-testimonials__button.custom-home-testimonials__button--next(@click='changeSlide("next")')
       BaseIcon.custom-home-testimonials__icon(name='arrow')        
     .custom-home-testimonials__navigation
-      .custom-home-testimonials__dot(v-for='(dot, i) in props.testimonials.length', :key='`dot-${i}`', :class="{ 'custom-home-testimonials__dot--active': currIndex === i}")
+      .custom-home-testimonials__dot(v-for='(dot, i) in props.testimonials.length', :key='`testDot-${i}`', :class="{ 'custom-home-testimonials__dot--active': currIndex === i}")
   .custom-home-testimonials__down(@click='moveDown')
     BaseIcon.custom-home-testimonials__down-arrow(name='arrow')    
               
