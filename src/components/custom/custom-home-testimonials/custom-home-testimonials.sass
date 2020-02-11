@@ -1,3 +1,159 @@
 .custom-home-testimonials
+
+  &__bg
+    @extend .image--bg
+
+  &__overlay
+    @extend .image--bg
+    z-index: 1
+    background: $ol1
+
+  &__container
+    @extend .container
+    transition: opacity .3s ease
+    opacity: 0
+    z-index: 2
+
+    .fp-completely &
+      opacity: 1
+
+  &__testimonials-container
+    @extend .col-8
+    @extend .col-2--offset
+    @include desktop
+      padding: 5rem 3rem 3rem
+    position: relative
+    z-index: 2
+    box-shadow: $bs2
+    background: $c1
+    padding: 4rem 2rem 2rem
+    color: $white
+
   &__title
     @extend h1
+    margin-bottom: 1rem
+    text-align: center
+
+  &__stars
+    display: flex
+    justify-content: center
+    margin-bottom: 2rem
+
+  &__star
+    margin: 0 rem-calc(4)
+    width: rem-calc(20)
+    height: rem-calc(20)
+    fill: $c9
+
+  &__content
+    position: relative
+
+  &__testimonial
+    position: absolute
+    top: 0
+    left: 0
+    transition: opacity .3s ease-in
+    opacity: 0
+    width: 100%
+    text-align: center
+
+    &--active
+      opacity: 1
+
+  &__author
+    color: $c9
+    font-weight: bold
+
+  &__social-icon
+    margin: .5rem auto 0
+    border-radius: 50%
+    background: $white
+    padding: 7px
+    width: 2rem
+    height: 2rem
+    fill: $c1
+
+  &__button
+    @include laptop-sm
+      width: 3rem
+      height: 3rem
+    display: flex
+    position: absolute
+    top: 50%
+    align-items: center
+    justify-content: center
+    transform: translateY(-50%)
+    transition: background .2s ease
+    z-index: 2
+    border-radius: 50%
+    background: $c7
+    cursor: pointer
+    width: 4rem
+    height: 4rem
+
+    &--prev
+      @include laptop
+        left: .5rem
+      left: 0
+
+    &--next
+      @include laptop
+        right: .5rem
+      right: 0
+
+    &:hover
+      background: rgba($c7, .9)
+      .custom-home-technology__icon
+        fill: $c5
+
+  &__icon
+    @include desktop
+      height: 1.2rem
+    @include laptop-sm
+      width: 1.5rem
+      height: 1.25rem
+    transition: fill .2s ease
+    width: 2rem
+    height: 1rem
+    fill: $c2
+
+    .custom-home-testimonials__button--prev &
+      transform: rotate(90deg)
+
+    .custom-home-testimonials__button--next &
+      transform: rotate(-90deg)
+
+  &__navigation
+    display: flex
+    position: absolute
+    bottom: -2rem
+    left: 50%
+    justify-content: center
+    transform: translateX(-50%)
+    z-index: 2
+    width: 100%
+
+  &__dot
+    transition: background .2s ease
+    margin: auto 6px
+    border-radius: 50%
+    background: $c7
+    width: 10px
+    height: 10px
+
+    &--active
+      background: $c3
+
+  &__down
+    @include tablet-md
+      display: none
+    position: absolute
+    bottom: 2rem
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 2
+
+  &__down-arrow
+    width: 2rem
+    height: 1rem
+    fill: $white
