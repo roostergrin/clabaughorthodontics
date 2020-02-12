@@ -1,2 +1,15 @@
 footer.footer
-  h1 Footer
+  .footer__container
+    .footer__left
+      .footer__item
+        p.footer__advantage Online Advantage by #[a.footer__roostergrin(href='https://roostergrin.com' target='_blank') RoosterGrin Media]
+      .footer__item
+        a.footer__social-link(v-for='(link, i) in props.social', :key='`footer-link-${i}`', :href='link.link')
+          BaseIcon.footer__social-icon(:name='link.icon')
+      .footer__item
+        a.footer__privacy(:href='props.privacy_policy') Privacy Policy
+        .footer__home_care Home Care       
+    //- .footer__right
+      //- a.footer__address(:href='props.address_link' v-html='props.address')
+                
+              
