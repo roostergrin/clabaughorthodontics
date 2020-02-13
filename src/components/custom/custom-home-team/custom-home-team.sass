@@ -2,10 +2,12 @@
   @include ipad-pro
     height: 800px
   @include tablet-md
-    position: relative
-    height: 2000px
+    // position: relative
+    padding: 3rem 0
+    height: 100%
   height: 100%
   overflow: hidden
+
   @media screen and (max-height: 600px)
     height: 800px
 
@@ -124,3 +126,17 @@
         margin: .5rem 0
         width: 100%
       width: 48.5%
+
+  &__down
+    @include tablet-md
+      display: none
+    position: absolute
+    bottom: 1rem
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 11
+
+  &__arrow
+    width: 2rem
+    height: 1rem
+    fill: $c6

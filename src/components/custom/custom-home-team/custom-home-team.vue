@@ -32,6 +32,9 @@ export default {
     },
     handleHover (i) {
       this.currIndex = i
+    },
+    moveDown () {
+      this.$store.dispatch('ACTIVE_INDEX', this.$store.state.currIndex + 1)
     }
   }
 }

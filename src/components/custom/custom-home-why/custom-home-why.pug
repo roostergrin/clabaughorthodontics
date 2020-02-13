@@ -7,5 +7,6 @@
         BaseIcon.custom-home-why__icon(:name='item.icon')
         h5.custom-home-why__heading(v-html='item.heading')
         .custom-home-why__text(v-html='item.text')  
-        
+  .custom-home-why__down(@click='moveDown')
+    BaseIcon.custom-home-why__arrow(name='arrow')  
         

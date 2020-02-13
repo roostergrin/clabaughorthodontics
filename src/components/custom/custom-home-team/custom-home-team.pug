@@ -7,6 +7,8 @@ section.custom-home-team
     .custom-home-team__content
       .custom-home-team__bio(v-for='(bio, i) in props.team_members', :key='`bio-${i}`', :class="{ 'custom-home-team__bio--active': currIndex === i }" )
         .custom-home-team__name(v-html='bio.name')
-        .custom-home-team__text(v-html='bio.bio' ref='bio')  
+        .custom-home-team__text(v-html='bio.bio' ref='bio')
+  .custom-home-team__down(@click='moveDown')
+    BaseIcon.custom-home-team__arrow(name='arrow')          
             
     

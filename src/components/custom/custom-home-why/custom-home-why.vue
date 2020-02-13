@@ -7,6 +7,11 @@ export default {
       type: Object,
       default: () => ({})
     }
+  },
+  methods: {
+    moveDown () {
+      this.$store.dispatch('ACTIVE_INDEX', this.$store.state.currIndex + 1)
+    }
   }
 }
 </script>
