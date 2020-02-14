@@ -8,7 +8,7 @@ footer.footer(v-if='props')
           BaseIcon.footer__social-icon(:name='link.icon')
       .footer__item
         a.footer__privacy(:href='props.privacy_policy') Privacy Policy
-        .footer__home_care Home Care       
+        router-link.footer__home_care(to='/home-care') Home Care       
     //- .footer__right
       //- a.footer__address(:href='props.address_link' v-html='props.address')
                 

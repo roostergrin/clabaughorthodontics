@@ -13,10 +13,18 @@ export default {
   }),
   methods: {
     handleRoute (route) {
-      this.$store.dispatch('SET_DRAWER', false)
-      setTimeout(() => {
-        this.$store.dispatch('ACTIVE_INDEX', route)
-      }, 300)
+      if (this.$route.path !== '/') {
+        this.$router.push('/')
+        this.$store.dispatch('SET_DRAWER', false)
+        setTimeout(() => {
+          this.$store.dispatch('ACTIVE_INDEX', route)
+        }, 300)
+      } else {
+        this.$store.dispatch('SET_DRAWER', false)
+        setTimeout(() => {
+          this.$store.dispatch('ACTIVE_INDEX', route)
+        }, 300)
+      }
     }
   }
 }

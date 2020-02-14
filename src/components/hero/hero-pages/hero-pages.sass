@@ -1,0 +1,31 @@
+.hero-pages
+  position: relative
+  height: 100vh
+  max-height: 800px
+
+  &__image
+    @extend .image--bg
+    background-position: center
+    background-size: cover
+
+  &__overlay
+    @extend .image--bg
+    z-index: 1
+    background: $ol2
+
+  &__container
+    @extend .container
+    z-index: 2
+    height: 100%
+
+  &__content
+    position: absolute
+    top: 75%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 100%
+    text-align: center
+
+  &__title
+    @extend .hero-text
+    color: $white
