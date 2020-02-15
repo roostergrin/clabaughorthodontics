@@ -9,7 +9,7 @@ export default {
     }
   },
   data: () => ({
-    currIndex: 4,
+    currIndex: 3,
     maxHeight: '',
     windowWidth: window.innerWidth
   }),

@@ -1,18 +1,18 @@
 main.pages-home(v-if='props', :class="{ 'pages-home--drawer': $store.state.drawer }")
   full-page#fullpage(:options='fullpageOptions', ref='home')
-    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+    .section
       HomeHero(:props='props.hero')
-    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+    .section
       WelcomeSection(:props='props.welcome')
-    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+    .section
       TeamSection(:props='props.team')
-    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+    .section
       TechnologySection(:props='props.technology')
-    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+    .section
       TestimonialsSection(:props='props.testimonials')
-    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+    .section
       WhySection(:props='props.why_us')
-    .section(:class="{ 'fp-auto-height': $store.state.isMobile }")
+    .section
       ContactSection(:props='props.contact')                
     .section.fp-auto-height
       TheFooter  

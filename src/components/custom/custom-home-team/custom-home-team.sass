@@ -4,7 +4,7 @@
   @include tablet-md
     // position: relative
     padding: 3rem 0
-    height: 100%
+    height: 800px
   height: 100%
   overflow: hidden
 
@@ -23,8 +23,11 @@
     @extend .container--large
     @include desktop
       align-items: center
+    @include ipad-pro
+      align-items: flex-start
     @include tablet-md
-      padding: 0
+      align-items: flex-start
+      padding: 3rem 0 0
     align-items: center
     justify-content: center
     width: 100%
@@ -39,7 +42,8 @@
     @include laptop
       width: calc(100vw / 5.5)
       height: calc((100vw / 5.5) * 2.69)
-    // @include tablet-md
+    @include tablet-md
+      margin: 0 -2rem
     //   width: calc(100vw / 7)
     //   height: calc((100vw/7)*2.69)
     display: inline-block
@@ -61,6 +65,12 @@
       @include laptop
         height: calc((100vw / 5.5) * 2.69)
         max-height: 100%
+      @include ipad-pro
+        transform: translateY(-2rem)
+        height: calc((100vw / 6) * 2.69)
+      @include tablet-md
+        transform: none
+        width: calc(100vw / 4.5)
       width: calc(1600px / 6.6)
       max-height: 580px
 
@@ -72,8 +82,10 @@
     //   height: 70vh
 
   &__content-container
+    @include ipad-pro
+      height: 50% !important
     @include tablet-md
-      height: 600px !important
+      height: 500px !important
       overflow: scroll
     position: absolute
     bottom: 0

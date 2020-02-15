@@ -20,6 +20,8 @@
 
   &__container
     @extend .container
+    @include tablet-md
+      padding: 0 1rem
     align-items: flex-end
     transition: opacity .3s ease-in
     // opacity: 0
@@ -34,6 +36,8 @@
     @include laptop
       margin: 2rem 2rem 0
       width: 100%
+    @include tablet-md
+      margin: 2rem 0 0
     display: flex
     flex-wrap: wrap
     margin-top: 2rem
@@ -43,6 +47,8 @@
     &--lower
       @extend .col-6
       @extend .col-5--offset
+      @include tablet-md
+        margin: 2rem 0
       // position: absolute
       align-self: flex-start
       margin-top: 2rem
@@ -90,6 +96,8 @@
   &__content
     @include desktop
       padding: 6rem 3rem
+    @include tablet-md
+      padding: 2rem 2rem 2rem 1rem
     position: absolute
     top: 50%
     left: 50%
@@ -104,6 +112,8 @@
 
   &__heading
     @extend h1
+    @include tablet-md
+      font-size: 24px
     margin-bottom: 1rem
     color: $c1
 
@@ -111,6 +121,9 @@
     @include laptop-sm
       width: 3rem
       height: 3rem
+    @include tablet-md
+      top: calc(50% - 1.5rem)
+      background: transparent
     display: flex
     position: absolute
     top: 50%
@@ -127,11 +140,15 @@
     &--prev
       @include laptop
         left: .5rem
+      @include tablet-md
+        left: 1rem
       left: 0
 
     &--next
       @include laptop
         right: .5rem
+      @include tablet-md
+        right: 1rem
       right: 0
 
     &:hover
@@ -145,6 +162,8 @@
     @include laptop-sm
       width: 1.5rem
       height: 1.25rem
+    @include tablet-md
+      fill: $c5
     transition: fill .2s ease
     width: 2rem
     height: 1rem

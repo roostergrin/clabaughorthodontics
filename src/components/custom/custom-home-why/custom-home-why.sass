@@ -2,29 +2,52 @@
   @include desktop
     padding: 0
     height: auto
+  @include ipad-pro
+    display: flex
+    padding: none
+  @include tablet-md
+    background: rgba($c4, .2)
+    padding: 2rem 0
   padding-top: 134px
   height: 100%
 
   &__bg
     @extend .image--bg
+    @include tablet-md
+      opacity: 0
     background-position: right top
 
   &__container
     @extend .container
+    @include ipad-pro
+      margin-top: auto
+      background: rgba($c7, .8)
+      // height: 60%
 
   &__title
     @extend h1
+    @include ipad-pro
+      margin-bottom: 1rem
+      padding: 2rem 0
+      width: 100%
+    @include tablet-md
+      width: 100%
     transition: opacity .3s ease-in
     opacity: 0
     margin-bottom: 3rem
     width: 60%
     color: $c1
 
-    .fp-completely &
+    .fp-completely &,
+    .is-mobile &
       opacity: 1
 
   &__item-container
     @extend .col-6
+    @include ipad-pro
+      padding-bottom: 4rem
+      width: 100%
+      // height: 100%
     display: flex
     flex-wrap: wrap
     justify-content: space-between
@@ -35,7 +58,8 @@
     margin-bottom: 2rem
     width: 48.5%
 
-    .fp-completely &
+    .fp-completely &,
+    .is-mobile &
       opacity: 1
 
   &__heading

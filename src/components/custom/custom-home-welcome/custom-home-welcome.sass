@@ -30,6 +30,8 @@
 
   &__left, &__right
     @extend .col-6
+    @include ipad-pro
+      width: 100%
     @include tablet-md
       width: 100%
 
@@ -43,6 +45,9 @@
   &__right
     @include desktop
       width: calc((5/12) * 100%)
+    @include ipad-pro
+      order: -1
+      margin-bottom: 2rem
     @include tablet-md
       order: -1
       margin-bottom: 2rem
@@ -55,6 +60,8 @@
       height: calc((1440px * (7/12)) * .5625)
     @include laptop-sm
       height: calc((50vw - 4rem) * .5625)
+    @include ipad-pro
+      height: calc((100vw - 4rem) * .5625)
     @include tablet-md
       margin: 0 auto
       width: 50vw
@@ -128,6 +135,8 @@
 
   &__logos
     @extend .col-6
+    @include ipad-pro
+      margin: 2rem auto 0
     @include tablet-md
       margin: 2rem auto 0
       width: 80%

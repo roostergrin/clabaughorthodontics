@@ -1,4 +1,6 @@
 .custom-home-testimonials
+  @include tablet-md
+    padding: 2rem 0 4rem
 
   &__bg
     @extend .image--bg
@@ -14,7 +16,8 @@
     opacity: 0
     z-index: 2
 
-    .fp-completely &
+    .fp-completely &,
+    .is-mobile &
       opacity: 1
 
   &__testimonials-container
@@ -22,6 +25,10 @@
     @extend .col-2--offset
     @include desktop
       padding: 5rem 3rem 3rem
+    @include tablet-md
+      margin: 0 auto
+      padding: 3rem 2rem 2rem
+      max-width: 600px
     position: relative
     z-index: 2
     box-shadow: $bs2
@@ -94,11 +101,15 @@
     &--prev
       @include laptop
         left: .5rem
+      @include tablet-md
+        left: 1rem
       left: 0
 
     &--next
       @include laptop
         right: .5rem
+      @include tablet-md
+        right: 1rem
       right: 0
 
     &:hover

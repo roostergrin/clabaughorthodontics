@@ -1,4 +1,6 @@
 .custom-home-contact
+  @include tablet-md
+    padding: 2rem 0
   height: 100%
 
   &__overlay
@@ -11,6 +13,8 @@
 
   &__container
     @extend .container
+    @include tablet-md
+      padding-bottom: 0
     align-items: flex-end
     z-index: 3
     padding-bottom: 3rem
@@ -20,6 +24,13 @@
       align-items: center
 
   &__information-container
+    @include ipad-pro
+      left: 50%
+      width: 100%
+      max-width: 500px
+    @include tablet-md
+      padding: 2rem 1rem
+      width: 45%
     position: absolute
     bottom: 3rem
     left: 1rem
@@ -33,11 +44,14 @@
     max-width: 421px
 
     .fp-completely &,
-    .custom-home-contact__footer &
+    .custom-home-contact__footer &,
+    .is-mobile &
       transform: none
 
-    @media screen and (min-height: 1080px)
-      bottom: 15%  
+    .is-mobile &
+      @include ipad-pro
+        bottom: 5%
+        transform: translateX(-50%)
 
   &__item
     display: flex
@@ -69,6 +83,10 @@
     @include laptop
       margin-left: calc((5/12) * 100%)
       width: 50%
+    @include ipad-pro
+      margin-left: 25%
+    @include tablet-md
+      margin-left: 50%
     transition: opacity .3s ease-in .1s
     opacity: 0
     box-shadow: $bs2
@@ -76,7 +94,8 @@
     padding: 2rem
 
     .fp-completely &,
-    .custom-home-contact__footer &
+    .custom-home-contact__footer &,
+    .is-mobile &
       opacity: 1
 
   &__title
