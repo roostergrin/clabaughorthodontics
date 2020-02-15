@@ -17,10 +17,8 @@ export default {
     toggleDrawer () {
       if (this.$store.state.drawer) {
         this.$store.dispatch('SET_DRAWER', false)
-        document.body.classList.remove('body-stop')
       } else {
         this.$store.dispatch('SET_DRAWER', true)
-        document.body.classList.add('body-stop')
       }
     },
     handleDropdown () {

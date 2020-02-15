@@ -1,0 +1,12 @@
+section.custom-care-faq
+  .custom-care-faq__container
+    .custom-care-faq__item(v-for='(item, i) in props.faq', :key='`item-${i}`', :class="{ 'custom-care-faq__item--active': show === i }" @click='toggleAccordion(i)')
+      .custom-care-faq__row
+        .custom-care-faq__heading
+          h3.custom-care-faq__header(v-html='item.question')
+        .custom-care-faq__cross
+          span
+          span
+      .custom-care-faq__drawer(:style='{ height: show === i ? answerHeight + "px" : 0 }')
+        .custom-care-faq__content(ref='answer')
+          .custom-care-faq__text(v-html='item.answer')
