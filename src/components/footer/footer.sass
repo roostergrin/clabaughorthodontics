@@ -13,12 +13,17 @@
     @include laptop
       width: 65%
     @include laptop-sm
-      width: 100%  
+      width: 100%
+    @include nexus
+      flex-direction: column-reverse
+      align-items: center
     display: flex
     justify-content: space-between
     width: 50%
 
   &__item
+    @include nexus
+      margin-bottom: 1rem
     display: flex
     align-items: center
 

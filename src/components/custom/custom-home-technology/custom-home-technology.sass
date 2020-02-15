@@ -1,4 +1,6 @@
 .custom-home-technology
+  @include nexus
+    background: $c7
   position: relative
   z-index: 10
   background: $c2
@@ -22,6 +24,8 @@
     @extend .container
     @include tablet-md
       padding: 0 1rem
+    @include nexus
+      padding: 0
     align-items: flex-end
     transition: opacity .3s ease-in
     // opacity: 0
@@ -38,6 +42,9 @@
       width: 100%
     @include tablet-md
       margin: 2rem 0 0
+    @include nexus
+      margin: 0
+      box-shadow: none
     display: flex
     flex-wrap: wrap
     margin-top: 2rem
@@ -49,13 +56,17 @@
       @extend .col-5--offset
       @include tablet-md
         margin: 2rem 0
-      // position: absolute
+      @include nexus
+        margin: 0 0 2rem
       align-self: flex-start
       margin-top: 2rem
       padding: 0
       height: 1rem
 
   &__image-container
+    @include nexus
+      width: 100%
+      height: 100vw !important
     position: relative
     background: $c7
     width: 40%
@@ -78,6 +89,8 @@
         animation: slide-in 1s cubic-bezier(.39, .575, .28, .995) forwards
 
   &__text-container
+    @include nexus
+      width: 100%
     position: relative
     background: $c7
     width: 60%
@@ -98,6 +111,9 @@
       padding: 6rem 3rem
     @include tablet-md
       padding: 2rem 2rem 2rem 1rem
+    @include nexus
+      top: 0
+      transform: translate(-50%, 0)
     position: absolute
     top: 50%
     left: 50%
@@ -124,6 +140,8 @@
     @include tablet-md
       top: calc(50% - 1.5rem)
       background: transparent
+    @include nexus
+      top: 25%
     display: flex
     position: absolute
     top: 50%
@@ -142,6 +160,8 @@
         left: .5rem
       @include tablet-md
         left: 1rem
+      @include nexus
+        left: 0
       left: 0
 
     &--next
@@ -149,12 +169,15 @@
         right: .5rem
       @include tablet-md
         right: 1rem
+      @include nexus
+        right: 0
       right: 0
 
-    &:hover
-      background: rgba($c7, .9)
-      .custom-home-technology__icon
-        fill: $c5
+    @media (hover: hover)
+      &:hover
+        background: rgba($c7, .9)
+        .custom-home-technology__icon
+          fill: $c5
 
   &__icon
     @include desktop
@@ -180,6 +203,8 @@
     justify-content: center
 
   &__dot
+    @include nexus
+      background: $c4
     transition: background .2s ease
     margin: auto 6px
     border-radius: 50%

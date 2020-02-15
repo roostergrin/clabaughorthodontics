@@ -46,6 +46,10 @@
       margin: 0 -2rem
     //   width: calc(100vw / 7)
     //   height: calc((100vw/7)*2.69)
+    @include nexus
+      margin: 0 -1.2rem
+      width: calc(100vw / 4.5)
+      height: calc((100vw / 4.5) * 2.69)
     display: inline-block
     transform: scale(1.1)
     transition: filter .2s ease
@@ -71,6 +75,9 @@
       @include tablet-md
         transform: none
         width: calc(100vw / 4.5)
+      @include nexus
+        width: calc(100vw / 3.5)
+        height: 220px
       width: calc(1600px / 6.6)
       max-height: 580px
 
@@ -87,6 +94,9 @@
     @include tablet-md
       height: 500px !important
       overflow: scroll
+    @include nexus
+      padding: 2rem 0
+      overflow: hidden
     position: absolute
     bottom: 0
     left: 0
@@ -103,12 +113,18 @@
 
   &__content
     @extend .container
+    @include nexus
+      padding: 0 1rem
+      overflow: scroll
     position: relative
     height: 100%
 
   &__bio
     @include laptop
       font-size: 15px
+    @include nexus
+      top: 0
+      padding: 0 1rem
     position: absolute
     top: 2rem
     left: 0
@@ -128,6 +144,9 @@
   &__row
     @include tablet-md
       margin-bottom: 0
+    // @include nexus
+      // padding-bottom: 2rem
+      // overflow: hidden
     display: flex
     flex-wrap: wrap
     justify-content: space-between

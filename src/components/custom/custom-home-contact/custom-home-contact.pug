@@ -1,6 +1,10 @@
 .custom-home-contact(:class="{ 'custom-home-contact__footer': $store.state.currIndex === 7 }")
   .custom-home-contact__overlay
   BaseLazyBg.custom-home-contact__bg(:src='props.image')
+  .custom-home-contact__container
+    .custom-home-contact__form-container
+      .custom-home-contact__title Let's Get Started!
+      FormContact     
   .custom-home-contact__information-container
     .custom-home-contact__content
       a.custom-home-contact__item(:href='content.address_link' target='_blank' rel='noreferrer noopener')
@@ -13,9 +17,6 @@
         BaseIcon.custom-home-contact__icon(name='envelope')
         .custom-home-contact__email(v-html='content.email')
           
-  .custom-home-contact__container
-    .custom-home-contact__form-container
-      .custom-home-contact__title Let's Get Started!
-      FormContact            
+           
             
   
