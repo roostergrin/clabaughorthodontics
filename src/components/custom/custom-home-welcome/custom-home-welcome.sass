@@ -63,12 +63,17 @@
     @include ipad-pro
       height: calc((100vw - 4rem) * .5625)
     @include tablet-md
+      transform: none
+      opacity: 1
       margin: 0 auto
       width: 50vw
     @include tablet
       width: 100%
       max-width: 600px
       height: calc(600px * .5625)
+    @include tablet-md
+      transform: none 
+      opacity: 1
     @include nexus
       height: calc((100vw - 2rem) * .5625)
     position: relative
@@ -152,6 +157,8 @@
       height: 80px
     @include laptop-sm
       height: 60px
+    @include tablet-md
+      opacity: 1
     @include nexus
       margin: 1rem auto 0
       height: 70px
@@ -166,6 +173,8 @@
       opacity: 1
 
   &__content
+    @include tablet-md
+      opacity: 1
     @include nexus
       padding: 0
     transition: opacity .35s ease-in .15s

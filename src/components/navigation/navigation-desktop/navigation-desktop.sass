@@ -69,7 +69,6 @@
         span
           background: $c2
 
-
   &__text
     position: relative
     transition: color .2s ease
@@ -151,10 +150,12 @@
       opacity: 1
 
   &__form-link
+    @extend .button
     display: block
     margin-bottom: 12px
-    background: $white
-    padding: rem-calc(5) 1rem
+    box-shadow: $bs2
+    background: $c4
+    // padding: rem-calc(5) 1rem
     line-height: 1
 
   &__consult-btn

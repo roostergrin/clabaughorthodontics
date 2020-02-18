@@ -31,6 +31,7 @@
       padding: 2rem 0
       width: 100%
     @include tablet-md
+      opacity: 1
       width: 100%
     transition: opacity .3s ease-in
     opacity: 0
@@ -55,6 +56,8 @@
     justify-content: space-between
 
   &__item
+    @include tablet-md
+      opacity: 1
     transition: opacity .4s ease-in
     opacity: 0
     margin-bottom: 2rem

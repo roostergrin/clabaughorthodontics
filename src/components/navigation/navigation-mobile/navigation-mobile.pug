@@ -1,0 +1,12 @@
+.navigation-mobile(v-if='props && !$store.state.loading', :class="{ 'navigation-mobile--top': $store.state.currIndex === 0}")
+  .navigation-mobile__container
+    .navigation-mobile__nav-primary  
+      .navigation-mobile__hamburger(@click='toggleDrawer', :class="{ 'navigation-mobile__hamburger--active': $store.state.drawer }")
+        .navigation-mobile__text
+          transition-group(name='fade' tag='div')
+            .navigation-mobile__hamburger-menu(v-show='!$store.state.drawer' key='menu') Menu
+            .navigation-mobile__hamburger-exit(v-show='$store.state.drawer' key='exit') Exit
+        .navigation-mobile__cross
+          span
+          span
+  

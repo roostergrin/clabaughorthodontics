@@ -2,6 +2,7 @@
 
 <script>
 import NavigationDesktop from 'components/navigation/navigation-desktop/navigation-desktop'
+import NavigationMobile from 'components/navigation/navigation-mobile/navigation-mobile'
 
 export default {
   computed: {
@@ -15,7 +16,8 @@ export default {
     }
   },
   components: {
-    NavigationDesktop
+    NavigationDesktop,
+    NavigationMobile
   }
 }
 </script>

@@ -1,0 +1,84 @@
+.navigation-mobile
+  position: fixed
+  top: 0
+  left: 0
+  transition: background .2s ease
+  animation: fade-in .4s ease-in forwards .2s
+  opacity: 0
+  z-index: 99
+  background: $white
+  padding: 1rem 0
+  width: 100%
+
+  &--top
+    background: transparent
+
+  &__container
+    @extend .container
+
+  &__hamburger
+    position: relative
+    z-index: 5
+    cursor: pointer
+    width: rem-calc(44)
+    line-height: 1
+    font-size: 15px
+
+    &-menu,
+    &-exit
+      position: absolute
+      top: 0
+      left: 1px
+      width: 100%
+      text-align: center
+
+  &__text
+    position: relative
+    transition: color .2s ease
+    width: 100%
+    height: 1rem
+    text-transform: uppercase
+    line-height: 1
+    color: $c1
+
+    .navigation-mobile--top &
+      color: $white
+
+    .navigation-mobile__hamburger--active &
+      color: $c1
+
+  &__cross
+    position: relative
+    margin: .35rem auto 0
+    width: rem-calc(22)
+    height: rem-calc(8)
+
+    span
+      display: block
+      position: absolute
+      transition: all .3s ease
+      background-color: $c1
+      width: rem-calc(22)
+      height: 2px
+
+      &:first-child
+        top: 0
+        left: 0
+
+      &:last-child
+        top: 100%
+        left: 0
+
+      .navigation-mobile--top &
+        background-color: $white
+
+      .navigation-mobile__hamburger--active &
+        background-color: $c1
+
+        &:first-child
+          top: 40%
+          transform: rotate(-45deg) translateZ(0)
+
+        &:last-child
+          top: 40%
+          transform: rotate(45deg) translateZ(0)

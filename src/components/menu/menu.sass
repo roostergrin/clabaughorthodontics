@@ -1,4 +1,9 @@
 .menu
+  @include tablet-md
+    position: fixed
+    width: 100%
+  @include phone-lg
+    box-shadow: none
   position: absolute
   top: 0
   left: 0
@@ -24,6 +29,23 @@
     @include ipad-pro
       top: 8rem
       transform: translate(0, 0)
+    @include tablet-md
+      border-bottom: 1px solid $c4
+    @include phone-land-lg
+      display: flex
+      position: relative
+      top: 0
+      left: 0
+      flex-wrap: wrap
+      justify-content: center
+      transform: none
+      padding: 60px 1.5rem 2rem
+    @include phone-lg
+      position: relative
+      top: 0
+      left: 0
+      transform: none
+      padding: 3.5rem 1.5rem 1rem
     position: absolute
     top: 50%
     left: 35%
@@ -38,6 +60,11 @@
       opacity: 1
 
   &__item
+    @include phone-land-lg
+      margin: .5rem
+      font-size: 18px
+    @include phone-lg
+      font-size: 22px
     margin: 1rem 0
     cursor: pointer
     padding: 0
@@ -48,3 +75,31 @@
 
     &:hover
       color: $c2
+
+    &--alt
+      color: $c1
+
+  &__forms
+    @include phone-land-lg
+      text-align: center
+    padding: 2rem 1.5rem 0
+
+  &__form-title
+    margin-bottom: .5rem
+    text-transform: uppercase
+    color: $c1
+    font-size: 22px
+
+  &__form
+    margin-right: 1.5rem
+    color: $c2
+
+  &__consult
+    padding: 2rem 1.5rem 0
+
+  &__consult-btn
+    @extend .button
+    @include phone-land-lg
+      margin: 0 auto
+    background: $c5
+    max-width: 230px

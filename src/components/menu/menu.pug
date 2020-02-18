@@ -1,3 +1,12 @@
 .menu(:class="{ 'menu--active': $store.state.drawer, 'menu--fixed': $route.path === '/home-care' }")
   ul.menu__list
     li.menu__item(v-for='(item, i) in links', :key='`link-${i}`' @click='handleRoute(i)' v-html='item')
+    li.menu__item(v-if='windowWidth <= 880')
+      router-link.menu__item--alt(to='/home-care' @click.native='closeDrawer') Home Care
+  .menu__lower(v-if='windowWidth <= 880')
+    .menu__forms
+      .menu__form-title Patient Forms
+      a.menu__form(v-for='(form, i) in props.patient_forms', :key='`nav-form-${i}`', :href='form.link' v-html='form.label' target='_blank')
+    .menu__consult
+      .menu__consult-btn(@click='handleRoute(6)') Request Consultation    
+            

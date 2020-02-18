@@ -1,6 +1,7 @@
 <template lang="pug" src="./app.pug"></template>
 
 <script>
+import GoogleTranslator from 'components/google-translate/google-translate'
 import TheMenu from 'components/menu/menu'
 import TheNavigation from 'components/navigation/navigation'
 
@@ -19,6 +20,7 @@ export default {
     }
   },
   components: {
+    GoogleTranslator,
     TheMenu,
     TheNavigation
   }

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VeeValidate from 'vee-validate'
 import VueWaypoint from 'vue-waypoint'
 // import VueParallaxJs from 'vue-parallax-js'
-// import VueScrollTo from 'vue-scrollto'
+import VueScrollTo from 'vue-scrollto'
 // import VueAxe from 'vue-axe'
 import VueFullPage from 'vue-fullpage.js'
 
@@ -11,17 +11,17 @@ const vendors = () => {
   Vue.use(VueWaypoint)
   Vue.use(VueFullPage)
   // Vue.use(VueParallaxJs, { minWidth: 1024 })
-  // Vue.use(VueScrollTo, {
-  //   container: 'body',
-  //   duration: 1500,
-  //   easing: 'ease',
-  //   offset: 0,
-  //   cancelable: true,
-  //   onDone: false,
-  //   onCancel: false,
-  //   x: false,
-  //   y: true
-  // })
+  Vue.use(VueScrollTo, {
+    container: 'body',
+    duration: 550,
+    easing: 'ease',
+    offset: -60,
+    cancelable: true,
+    onDone: false,
+    onCancel: false,
+    x: false,
+    y: true
+  })
   // Vue.use(VueAxe, {
   //   config: {
   //     rules: [
