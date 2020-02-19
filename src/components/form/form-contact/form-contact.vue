@@ -46,7 +46,6 @@ export default {
     },
     onSubmit () {
       this.formSubmitted = true
-      console.log(this.isFirstTime)
       if (this.isFirstTime) {
         this.firstTimeMessage = 'Yes, I am a first time patient'
       }
