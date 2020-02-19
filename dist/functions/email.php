@@ -20,7 +20,7 @@ function rg_serve_route () {
   $headers = array('Content-Type: text/html; charset=UTF-8');
   $message = '<html><body>';
   $message .= '<div class="container" style="background-color: #ebf5ff; padding: 1.5rem 0;">
-  <div style="padding: 2rem 0; margin: 0 auto;"><img style="width: auto; height: 6rem; display: block; margin-left: auto; margin-right: auto; margin-bottom: 1rem;" src="https://www.roostergrin.com/wp-content/uploads/2019/11/rg-logo.png"><h1 style="font-size: 40px; margin: 0; text-align: center; width: 100%; color: #003b75;">Form Received!</h1></div></div>';
+  <div style="padding: 2rem 0; margin: 0 auto;"><img style="width: auto; height: 4rem; display: block; margin-left: auto; margin-right: auto; margin-bottom: 1rem;" src="https://clabaughorthodontics.roostertest3.com/wp-content/uploads/logo.png"><h1 style="font-size: 40px; margin: 0; text-align: center; width: 100%; color: #003b75;">Form Received!</h1></div></div>';
   $message .= '<div class="section" style="background-color: #fdfdfd;">';
 
   $message .= '<div class="container" style="padding: 4rem 32px 1rem 32px; max-width: 1440px; margin: 0 auto">';
@@ -28,11 +28,9 @@ function rg_serve_route () {
   $message .= '<div class="card-holder" style="padding: 2rem; background-color: white;">';
 
   $message .= '<table style="width: 100%; text-align: left"><tr>';
-  $message .= '<th><p style="font-size: 14px; margin-bottom: .5rem; color: #848484; font-weight: 300;">First Name</p></th>';
-  $message .= '<th><p style="font-size: 14px; margin-bottom: .5rem; color: #848484; font-weight: 300;">Last Name</p></th>';
+  $message .= '<th><p style="font-size: 14px; margin-bottom: .5rem; color: #848484; font-weight: 300;">Name</p></th>';
   $message .= '</tr><tr>';
-  $message .= '<td style="width: 50%; font-size: 20px;"><h5 style="margin-top: 0; padding-top: 0; font-weight: 300; border-bottom: 1px solid #3f3f3f; margin-right: 10%;">' . $data['firstName'] . '</h5></td>';
-  $message .= '<td style="width: 50%; font-size: 20px;"><h5 style="margin-top: 0; padding-top: 0; font-weight: 300; border-bottom: 1px solid #3f3f3f; margin-right: 10%;">' . $data['lastName'] . '</h5></td>';
+  $message .= '<td style="width: 50%; font-size: 20px;"><h5 style="margin-top: 0; padding-top: 0; font-weight: 300; border-bottom: 1px solid #3f3f3f; margin-right: 10%;">' . $data['fullName'] . '</h5></td>';
   $message .= '</tr></table>';
 
   $message .= '<table style="width: 100%; text-align: left"><tr>';

@@ -56,7 +56,6 @@ export default {
           }, 750)
           setTimeout(() => {
             this.fullName = ''
-            this.lastName = ''
             this.clientEmail = ''
             this.clientPhone = ''
             this.isFirstTime = false
