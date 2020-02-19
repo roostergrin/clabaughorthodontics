@@ -1,4 +1,4 @@
-.navigation-desktop(v-if='props && !$store.state.loading', :class="{ 'navigation-desktop--top': $store.state.currIndex === 0, 'navigation-desktop--white': $store.state.currIndex === 3 || $store.state.currIndex === 4 || $store.state.currIndex === 6 || $store.state.currIndex === 7 }")
+.navigation-desktop(v-if='props && !$store.state.loading', :class="{ 'navigation-desktop--top': $store.state.currIndex === 0 && $route.path === '/', 'navigation-desktop--white': $store.state.currIndex === 3 || $store.state.currIndex === 4 || $store.state.currIndex === 6 || $store.state.currIndex === 7 || $route.path !== '/', 'navigation-desktop--care': scrolling }")
   .navigation-desktop__container
     
     .navigation-desktop__item

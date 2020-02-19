@@ -1,4 +1,4 @@
-.navigation-mobile(v-if='props && !$store.state.loading', :class="{ 'navigation-mobile--top': $store.state.currIndex === 0}")
+.navigation-mobile(v-if='props && !$store.state.loading', :class="{ 'navigation-mobile--top': !scrolling }")
   .navigation-mobile__container
     .navigation-mobile__nav-primary  
       .navigation-mobile__hamburger(@click='toggleDrawer', :class="{ 'navigation-mobile__hamburger--active': $store.state.drawer }")

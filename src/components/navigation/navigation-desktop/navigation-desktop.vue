@@ -11,8 +11,21 @@ export default {
     }
   },
   data: () => ({
-    dropdownActive: false
+    dropdownActive: false,
+    windowHeight: window.pageYOffset
   }),
+  computed: {
+    scrolling () {
+      if (this.$route.path !== '/') {
+        return this.windowHeight > (window.innerHeight * 0.85)
+      }
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', () => {
+      this.windowHeight = window.pageYOffset
+    })
+  },
   methods: {
     toggleDrawer () {
       if (this.$store.state.drawer) {
@@ -25,7 +38,14 @@ export default {
       this.dropdownActive = !this.dropdownActive
     },
     handleRoute (route) {
-      this.$store.dispatch('ACTIVE_INDEX', route)
+      if (this.$route.path !== '/') {
+        this.$router.push('/')
+        setTimeout(() => {
+          this.$store.dispatch('ACTIVE_INDEX', route)
+        }, 350)
+      } else {
+        this.$store.dispatch('ACTIVE_INDEX', route)
+      }
     }
   }
 }

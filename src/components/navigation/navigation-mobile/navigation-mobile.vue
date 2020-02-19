@@ -12,6 +12,19 @@ export default {
       default: () => ([])
     }
   },
+  data: () => ({
+    windowHeight: window.pageYOffset
+  }),
+  computed: {
+    scrolling () {
+      return this.windowHeight > (window.innerHeight * 0.35)
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', () => {
+      this.windowHeight = window.pageYOffset
+    })
+  },
   methods: {
     toggleDrawer () {
       if (this.$store.state.drawer) {
