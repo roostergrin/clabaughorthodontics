@@ -18,6 +18,12 @@ export default {
       modalOpen: false
     }
   },
+  props: {
+    content: {
+      type: Object,
+      default: () => ({})
+    }
+  },
   methods: {
     validate () {
       this.$validator.validateAll()
@@ -35,10 +41,12 @@ export default {
       this.formSubmitted = false
       setTimeout(() => {
         this.modalOpen = false
+        this.isFirstTime = false
       }, 150)
     },
     onSubmit () {
       this.formSubmitted = true
+      console.log(this.isFirstTime)
       if (this.isFirstTime) {
         this.firstTimeMessage = 'Yes, I am a first time patient'
       }
@@ -58,7 +66,6 @@ export default {
             this.fullName = ''
             this.clientEmail = ''
             this.clientPhone = ''
-            this.isFirstTime = false
             this.clientMessage = ''
           }, 1000)
           setTimeout(() => {

@@ -26,6 +26,7 @@
     align-items: flex-end
     z-index: 3
     padding-bottom: 3rem
+    max-width: 100%
     height: 100%
 
     @media screen and (min-height: 1080px)
@@ -54,7 +55,7 @@
     left: 1rem
     transform: translateX(calc(-100% - 2rem))
     transition: transform .3s cubic-bezier(.39, .575, .28, .995)
-    z-index: 4
+    z-index: 2
     box-shadow: $bs2
     background: $c1
     padding: 2rem
@@ -94,7 +95,7 @@
     color: $white
 
     &:hover
-      text-decoration: underline 
+      text-decoration: underline
 
   &__address
     line-height: 1.25

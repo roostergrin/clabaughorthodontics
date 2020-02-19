@@ -1,10 +1,10 @@
-section.custom-home-contact(:class="{ 'custom-home-contact__footer': $store.state.currIndex === 7 }", id='section-6')
+section.custom-home-contact(:class="{ 'custom-home-contact__footer': $store.state.currIndex === 7 }", id='section-6', v-if='content')
   .custom-home-contact__overlay
   BaseLazyBg.custom-home-contact__bg(:src='props.image')
   .custom-home-contact__container
     .custom-home-contact__form-container
       .custom-home-contact__title Let's Get Started!
-      FormContact     
+      FormContact(:content='content')   
   .custom-home-contact__information-container
     .custom-home-contact__content
       a.custom-home-contact__item(:href='content.address_link' target='_blank' rel='noreferrer noopener')
