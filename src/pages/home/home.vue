@@ -30,7 +30,8 @@ export default {
         onLeave: this.handleIndex,
         easeingcss3: 'cubic-bezier(.52, .01, .16, 1)',
         responsiveWidth: 880,
-        scrollingSpeed: 550
+        scrollingSpeed: 550,
+        fixedElements: '.form-contact__modal'
       }
     }
   },
