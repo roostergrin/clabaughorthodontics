@@ -18,17 +18,18 @@
     left: 50%
     transform: translate(-50%, -50%)
     color: $c1
+    font-size: 24px
 
   &__container
     @extend .container--large
-    @include desktop
-      align-items: center
     @include ipad-pro
-      align-items: flex-start
-    @include tablet-md
-      align-items: flex-start
+      align-items: center
+    @include tablet-lg
+      align-items: center
       padding: 3rem 0 0
-    align-items: center
+    @include tablet
+      align-items: flex-start
+    align-items: flex-end
     justify-content: center
     width: 100%
     height: 100%
@@ -36,57 +37,38 @@
   &__person
     @extend .image--bg
     @include desktop
-      margin: 0 -3rem
+      margin: 0 -2.5rem
       width: calc(1920px / 7)
       height: calc((1920px / 7) * 2.69)
     @include laptop
       width: calc(100vw / 5.5)
-      height: calc((100vw / 5.5) * 2.69)
+      height: calc((100vw / 5.5) * 3)
     @include tablet-md
-      margin: 0 -2rem
-    //   width: calc(100vw / 7)
-    //   height: calc((100vw/7)*2.69)
+      margin: 0 -1.5rem
     @include nexus
-      margin: 0 -1.2rem
-      width: calc(100vw / 4.5)
-      height: calc((100vw / 4.5) * 2.69)
+      margin: 0 -1rem
+    @include phone-lg
+      margin: 0 -.75rem
     display: inline-block
     transform: scale(1.1)
     transition: filter .2s ease
-    margin: 0 -2.25rem
+    margin: 0 -2rem
     background-repeat: no-repeat
     background-position: center top
     background-size: cover
     cursor: pointer
-    width: calc(1600px / 7)
-    height: calc((1600px / 7) * 2.69)
+    width: calc(1440px / 7)
+    height: calc((1440px / 7) * 3)
     filter: grayscale(.85)
 
-    &:nth-child(4)
-      @include desktop
-        transform: translateY(2rem) scale(1.1)
-        max-height: 100%
-      @include laptop
-        height: calc((100vw / 5.5) * 2.69)
-        max-height: 100%
-      @include ipad-pro
-        transform: translateY(-2rem)
-        height: calc((100vw / 6) * 2.69)
-      @include tablet-md
-        transform: none
-        width: calc(100vw / 4.5)
+    &:nth-child(3)
       @include nexus
-        width: calc(100vw / 3.5)
-        height: 220px
-      width: calc(1600px / 6.6)
-      max-height: 580px
+        margin: 0 0 0 -1.5rem
+      margin: 0 0 0 -3rem
 
     &:hover,
     &--active
       filter: none
-
-    // @media screen and (max-height: 750px)
-    //   height: 70vh
 
   &__content-container
     @include ipad-pro
@@ -95,8 +77,9 @@
       height: 500px !important
       overflow: scroll
     @include tablet-md
-      transform: none 
+      transform: none
     @include nexus
+      background: $c8
       padding: 2rem 0
       overflow: hidden
     position: absolute
@@ -106,7 +89,7 @@
     transition: transform .3s cubic-bezier(.39, .575, .28, .995)
     z-index: 10
     box-shadow: 0 -13px 27px -5px rgba(50, 50, 93, .09), 0 -8px 16px -8px rgba(0, 0, 0, .15)
-    background: $c8
+    background: rgba($c8, .8)
     width: 100%
 
     .fp-completely &,
