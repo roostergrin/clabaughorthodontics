@@ -1,4 +1,5 @@
-section.custom-home-team(id='section-2')
+section.custom-home-team(id='section-2', :style="{ height: (windowWidth > 880 ? '' : (maxHeight + 420) + 'px') }")
+  //- height: (maxHeight + 420) + 'px'
   .custom-home-team__title(v-html='props.title')
   .custom-home-team__container
     .custom-home-team__team-container

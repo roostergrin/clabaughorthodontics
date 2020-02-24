@@ -9,6 +9,8 @@
   &__title
     @include ipad-pro
       display: none
+    @include tablet-lg
+      top: 86px
     @include tablet-md
       display: none
     position: absolute
@@ -40,6 +42,8 @@
     @include laptop
       margin: 2rem 2rem 0
       width: 100%
+    @include tablet-lg
+      margin-top: 6.5rem
     @include tablet-md
       margin: 2rem 0 0
     @include nexus
@@ -95,6 +99,7 @@
     background: $c7
     width: 60%
 
+
   &__image
     @extend .image--bg
     transition: transform .65s cubic-bezier(.39, .575, .28, .995), opacity .05s linear .25s
@@ -125,6 +130,10 @@
 
     &--active
       opacity: 1
+
+    &:first-child
+      .custom-home-technology__heading
+        text-transform: none
 
   &__heading
     @extend h1

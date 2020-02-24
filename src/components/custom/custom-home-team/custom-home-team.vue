@@ -14,11 +14,21 @@ export default {
     windowWidth: window.innerWidth
   }),
   mounted () {
-    this.getHeight()
+    if (this.windowWidth >= 880) {
+      this.getHeight()
+    }
+    if (this.windowWidth < 880) {
+      this.mobileHeight()
+    }
     window.addEventListener('resize', () => {
       setTimeout(() => {
         this.windowWidth = window.innerWidth
-        this.getHeight()
+        if (this.windowWidth >= 880) {
+          this.getHeight()
+        }
+        if (this.windowWidth < 880) {
+          this.mobileHeight()
+        }
       }, 500)
     })
   },
@@ -30,8 +40,14 @@ export default {
       })
       this.maxHeight = Math.max(...newArr)
     },
+    mobileHeight () {
+      this.maxHeight = this.$refs.bio[this.currIndex].clientHeight
+    },
     handleHover (i) {
       this.currIndex = i
+      if (this.windowWidth < 880) {
+        this.maxHeight = this.$refs.bio[this.currIndex].clientHeight
+      }
     },
     moveDown () {
       this.$store.dispatch('ACTIVE_INDEX', this.$store.state.currIndex + 1)

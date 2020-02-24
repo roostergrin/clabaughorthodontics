@@ -5,30 +5,40 @@
   font-size: 14px
 
   &__container
-    @extend .container--large
+    @extend .container
     align-items: center
     justify-content: space-between
 
   &__left
-    @include laptop
-      width: 65%
-    @include laptop-sm
-      width: 100%
     @include nexus
       flex-direction: column-reverse
       align-items: center
     display: flex
     justify-content: space-between
-    width: 50%
+    width: 100%
 
   &__item
     @include nexus
+      justify-content: center
       margin-bottom: 1rem
+      width: 100%
     display: flex
     align-items: center
+    width: 33.33%
 
     a
       color: $white
+
+    &:nth-child(2)
+      @include nexus
+        justify-content: center
+      justify-content: center
+
+    &:nth-child(3)
+      @include nexus
+        justify-content: center
+      justify-content: flex-end
+
 
   &__social-icon
     transition: background .2s ease, border .2s ease, fill .2s ease

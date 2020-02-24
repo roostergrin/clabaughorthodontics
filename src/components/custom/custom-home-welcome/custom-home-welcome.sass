@@ -16,6 +16,7 @@
       display: none
     @include tablet-md
       display: none
+    @extend h1  
     position: absolute
     top: 2.5rem
     left: 50%
@@ -72,7 +73,7 @@
       max-width: 600px
       height: calc(600px * .5625)
     @include tablet-md
-      transform: none 
+      transform: none
       opacity: 1
     @include nexus
       height: calc((100vw - 2rem) * .5625)

@@ -1,4 +1,4 @@
-.menu(:class="{ 'menu--active': $store.state.drawer, 'menu--fixed': $route.path === '/home-care' }")
+.menu(v-if='props', :class="{ 'menu--active': $store.state.drawer, 'menu--fixed': $route.path === '/home-care' }")
   ul.menu__list
     li.menu__item(v-for='(item, i) in links', :key='`link-${i}`' @click='handleRoute(i)' v-html='item')
     li.menu__item(v-if='windowWidth <= 880')

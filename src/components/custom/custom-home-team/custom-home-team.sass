@@ -48,7 +48,7 @@
     @include nexus
       margin: 0 -1rem
     @include phone-lg
-      margin: 0 -.75rem
+      margin: 0 -.55rem
     display: inline-block
     transform: scale(1.1)
     transition: filter .2s ease
@@ -64,24 +64,26 @@
     &:nth-child(3)
       @include nexus
         margin: 0 0 0 -1.5rem
+      @include phone-lg
+        margin: 0 0 0 -.9rem  
       margin: 0 0 0 -3rem
 
     &:hover,
     &--active
       filter: none
 
+    @media screen and (min-width: 1100px) and (max-height: 701px)
+      width: calc(100vw / 5.85)
+      height: calc((100vw / 6.6) * 3)
+
   &__content-container
     @include ipad-pro
       height: 50% !important
     @include tablet-md
-      height: 500px !important
-      overflow: scroll
-    @include tablet-md
       transform: none
     @include nexus
       background: $c8
-      padding: 2rem 0
-      overflow: hidden
+      padding: 1.5rem 0
     position: absolute
     bottom: 0
     left: 0
@@ -100,9 +102,11 @@
     @extend .container
     @include nexus
       padding: 0 1rem
-      overflow: scroll
     position: relative
     height: 100%
+
+    @media screen and (max-height: 701px)
+      line-height: 1.4
 
   &__bio
     @include laptop
@@ -129,9 +133,9 @@
   &__row
     @include tablet-md
       margin-bottom: 0
+      overflow: hidden
     // @include nexus
       // padding-bottom: 2rem
-      // overflow: hidden
     display: flex
     flex-wrap: wrap
     justify-content: space-between
