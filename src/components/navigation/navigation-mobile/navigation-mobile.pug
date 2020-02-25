@@ -10,3 +10,9 @@
           span
           span
   
+    .navigation-mobile__nav-secondary
+      a.navigation-mobile__phone(:href='"tel:1-" + props.phone')
+        BaseIcon.navigation-mobile__icon(name='phone')
+      .navigation-mobile__consult(@click='handleRoute(6)')
+        BaseIcon.navigation-mobile__icon(name='calendar')      
+  

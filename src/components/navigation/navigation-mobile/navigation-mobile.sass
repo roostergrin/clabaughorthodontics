@@ -15,6 +15,8 @@
 
   &__container
     @extend .container
+    align-items: center
+    justify-content: space-between
 
   &__hamburger
     position: relative
@@ -82,3 +84,18 @@
         &:last-child
           top: 40%
           transform: rotate(45deg) translateZ(0)
+
+  &__nav-secondary
+    display: flex
+
+  &__phone
+    margin-right: 1rem
+
+  &__icon
+    transition: fill .2s ease
+    width: 1.5rem
+    height: 1.5rem
+    fill: $c1
+
+    .navigation-mobile--top &
+      fill: $white

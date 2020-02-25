@@ -32,6 +32,19 @@ export default {
       } else {
         this.$store.dispatch('SET_DRAWER', true)
       }
+    },
+    handleRoute (route) {
+      if (this.$route.path !== '/') {
+        this.$router.push('/')
+        setTimeout(() => {
+          this.$scrollTo(`#section-${route}`)
+        }, 350)
+      } else {
+        this.$scrollTo(`#section-${route}`)
+      }
+      if (this.$store.state.drawer) {
+        this.$store.dispatch('SET_DRAWER', false)
+      }
     }
   }
 }
