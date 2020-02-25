@@ -12,7 +12,6 @@ export default {
     currentSlide: 0,
     sliding: false,
     maxHeight: null
-    // animate: null
   }),
   mounted () {
     const setHeight = setInterval(() => {
@@ -27,9 +26,16 @@ export default {
         this.getHeight()
       }, 500)
     })
-    // this.animate = setInterval(() => {
-    //   this.changeSlide('auto')
-    // }, 5000)
+    this.handleTouch((swipedir) => {
+      if (this.$store.state.isMobile) {
+        if (swipedir === 'left') {
+          this.changeSlide('next')
+        }
+        if (swipedir === 'right') {
+          this.changeSlide('prev')
+        }
+      }
+    })
   },
   methods: {
     getHeight () {
@@ -53,6 +59,43 @@ export default {
     },
     moveDown () {
       this.$store.dispatch('ACTIVE_INDEX', this.$store.state.currIndex + 1)
+    },
+    handleTouch (callback) {
+      var swipedir
+      var startX
+      var startY
+      var distX
+      var distY
+      var threshold = 1 // min dist for swipe
+      var restraint = 100 // max dist allow allowed at the same time in perpendicular direction
+      var allowedTime = 300 // max time allowed to travel dist
+      var elapsedTime
+      var startTime
+      var handleSwipe = callback || function (swipedir) {}
+
+      this.$refs.technology.addEventListener('touchstart', (e) => {
+        let touchObj = e.changedTouches[0]
+        swipedir = 'none'
+        startX = touchObj.pageX
+        startY = touchObj.pageY
+        startTime = new Date().getTime()
+      })
+
+      this.$refs.technology.addEventListener('touchend', (e) => {
+        let touchObj = e.changedTouches[0]
+        distX = touchObj.pageX - startX
+        distY = touchObj.pageY - startY
+        elapsedTime = new Date().getTime() - startTime
+        if (elapsedTime <= allowedTime) {
+
+        }
+        if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+          swipedir = (distX < 0) ? 'left' : 'right'
+        } else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) {
+          swipedir = (distY < 0) ? 'up' : 'down'
+        }
+        return handleSwipe(swipedir)
+      })
     }
   }
 }
