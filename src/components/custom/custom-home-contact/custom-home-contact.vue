@@ -13,6 +13,16 @@ export default {
       default: () => ({})
     }
   },
+  data: () => ({
+    windowHeight: window.innerHeight
+  }),
+  mounted () {
+    window.addEventListener('resize', () => {
+      setTimeout(() => {
+        this.windowHeight = window.innerHeight
+      }, 500)
+    })
+  },
   computed: {
     content () {
       return this.$store.state.app.global

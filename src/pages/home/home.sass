@@ -3,7 +3,9 @@
   overflow: hidden
 
   &--drawer
+    @include tablet-lg
+      transform: translateX(20%)
     @include tablet-md
       transform: none
-    transform: translateX(35%)
+    transform: translateX(15%)
     transition: transform .5s cubic-bezier(.39, .575, .28, .995)

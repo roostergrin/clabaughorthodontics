@@ -1,22 +1,22 @@
 .form-contact
   form.form-contact__form
     
-    .form-contact__group
+    .form-contact__group(:class="{ 'form-contact__group--half': windowHeight < 751 && !$store.state.isMobile}")
       label.form-contact__label Your Name *
       input.form-contact__input(name='fullName', v-model='fullName', v-validate="'required'", :class="{ 'form-contact__input--error': errors.has('fullName') }", type='text')
       .form-contact__error-message(v-show="errors.has('fullName')") Your name is required.
       
-    .form-contact__group
+    .form-contact__group(:class="{ 'form-contact__group--half': windowHeight < 751 && !$store.state.isMobile}")
       label.form-contact__label Your Email *
       input.form-contact__input(name='clientEmail', v-model='clientEmail', v-validate="'required|email'", :class="{ 'form-contact__input--error': errors.has('clientEmail') }")
       .form-contact__error-message(v-show="errors.has('clientEmail')")  Please input a valid email adress.
     
-    .form-contact__group
+    .form-contact__group(:class="{ 'form-contact__group--half': windowHeight < 751 && !$store.state.isMobile}")
       label.form-contact__label Your Phone Number *
       input.form-contact__input(name='clientPhone', v-model='clientPhone', v-validate="'required|numeric'", :class="{ 'form-contact__input--error': errors.has('clientPhone') }")
       .form-contact__error-message(v-show="errors.has('clientPhone')")  Please input a valid phone number.
       
-    .form-contact__group
+    .form-contact__group(:class="{ 'form-contact__group--half': windowHeight < 751 && !$store.state.isMobile}")
       .form-contact__checkbox
         .form-contact__checkbox-group
           input.form-contact__checkbox-input(

@@ -2,11 +2,20 @@
   position: fixed
   top: 0
   left: 0
+  transition: padding .2s ease, background .2s ease, box-shadow .2s ease
   animation: fade-in .4s ease-in forwards .6s
   opacity: 0
   z-index: 99
   padding: 2rem 0
   width: 100%
+
+  &--care
+    box-shadow: $bs1
+    background: $white
+    padding: 1rem 0
+
+  &--care-menu
+    box-shadow: none 
 
   &__container
     @extend .container--large
@@ -17,6 +26,8 @@
     align-items: flex-start
 
   &__nav-primary
+    @include tablet-lg
+      margin-left: .5rem
     display: flex
     align-items: center
     transform: none
@@ -48,6 +59,8 @@
       fill: $c1
 
   &__hamburger
+    @include tablet-lg
+      margin-right: 1rem
     display: flex
     position: relative
     align-items: center

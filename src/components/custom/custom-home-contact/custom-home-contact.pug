@@ -4,7 +4,7 @@ section.custom-home-contact(:class="{ 'custom-home-contact__footer': $store.stat
   .custom-home-contact__container
     .custom-home-contact__form-container
       .custom-home-contact__title Let's Get Started!
-      FormContact(:content='content')   
+      FormContact(:content='content', :windowHeight='windowHeight')   
   .custom-home-contact__information-container
     .custom-home-contact__content
       a.custom-home-contact__item(:href='content.address_link' target='_blank' rel='noreferrer noopener')

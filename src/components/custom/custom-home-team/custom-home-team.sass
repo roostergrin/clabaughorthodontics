@@ -14,14 +14,17 @@
   &__title
     @extend h1
     position: absolute
-    top: 3rem
+    top: 2.5rem
     left: 50%
-    transform: translate(-50%, -50%)
+    transform: translateX(-50%)
     color: $c1
-    font-size: 24px
+    // font-size: 24px
 
   &__container
     @extend .container--large
+    @include desktop
+      align-items: center
+      margin-top: 40px
     @include ipad-pro
       align-items: center
     @include tablet-lg
@@ -39,7 +42,7 @@
     @include desktop
       margin: 0 -2.5rem
       width: calc(1920px / 7)
-      height: calc((1920px / 7) * 2.69)
+      height: calc((1920px / 7) * 3)
     @include laptop
       width: calc(100vw / 6)
       height: calc((100vw / 6) * 3)
@@ -65,7 +68,7 @@
       @include nexus
         margin: 0 0 0 -1.5rem
       @include phone-lg
-        margin: 0 0 0 -.9rem  
+        margin: 0 0 0 -.9rem
       margin: 0 0 0 -3rem
 
     &:hover,
@@ -77,6 +80,8 @@
       height: calc((100vw / 6.6) * 3)
 
   &__content-container
+    @include desktop
+      height: 45% !important
     @include ipad-pro
       height: 50% !important
     @include tablet-md

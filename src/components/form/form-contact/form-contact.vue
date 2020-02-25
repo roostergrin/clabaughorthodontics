@@ -22,6 +22,10 @@ export default {
     content: {
       type: Object,
       default: () => ({})
+    },
+    windowHeight: {
+      type: Number,
+      default: 0
     }
   },
   methods: {

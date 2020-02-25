@@ -9,10 +9,15 @@
   &__title
     @include ipad-pro
       display: none
-    @include tablet-lg
+    @include laptop
       top: 86px
+    @include tablet-lg
+      top: 96px
+      width: 100%
+      text-align: center
     @include tablet-md
       display: none
+    @extend h1
     position: absolute
     top: 2.5rem
     left: 50%
@@ -20,7 +25,7 @@
     text-transform: uppercase
     letter-spacing: 2px
     color: $white
-    font-size: 24px
+    // font-size: 24px
 
   &__container
     @extend .container
@@ -40,10 +45,10 @@
     @extend .col-10
     @extend .col-1--offset
     @include laptop
+      margin-top: 6.5rem
+    @include tablet-lg
       margin: 2rem 2rem 0
       width: 100%
-    @include tablet-lg
-      margin-top: 6.5rem
     @include tablet-md
       margin: 2rem 0 0
     @include nexus

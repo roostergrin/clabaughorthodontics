@@ -17,7 +17,7 @@ export default {
   computed: {
     scrolling () {
       if (this.$route.path !== '/') {
-        return this.windowHeight > (window.innerHeight * 0.85)
+        return this.windowHeight > (window.innerHeight * 0.65)
       }
     }
   },
