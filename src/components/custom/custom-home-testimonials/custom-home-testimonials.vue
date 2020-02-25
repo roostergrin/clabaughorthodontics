@@ -65,7 +65,6 @@ export default {
       var handleSwipe = callback || function (swipedir) {}
 
       this.$refs.testimonials.addEventListener('touchstart', (e) => {
-        console.log('testimonials', e)
         let touchObj = e.changedTouches[0]
         swipedir = 'none'
         startX = touchObj.pageX
