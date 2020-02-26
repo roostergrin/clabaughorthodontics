@@ -11,7 +11,8 @@ export default {
   data: () => ({
     currIndex: 3,
     maxHeight: '',
-    windowWidth: window.innerWidth
+    windowWidth: window.innerWidth,
+    windowHeight: window.innerHeight
   }),
   mounted () {
     if (this.windowWidth >= 880) {
@@ -23,6 +24,7 @@ export default {
     window.addEventListener('resize', () => {
       setTimeout(() => {
         this.windowWidth = window.innerWidth
+        this.windowHeight = window.innerHeight
         if (this.windowWidth >= 880) {
           this.getHeight()
         }

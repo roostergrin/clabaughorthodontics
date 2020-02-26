@@ -11,6 +11,9 @@
   padding-top: 134px
   height: 100%
 
+  @media screen and (max-height: 701px) and (min-width: 600px)
+    padding-top: 100px
+
   &__bg
     @extend .image--bg
     @include tablet-md
@@ -42,6 +45,9 @@
     .fp-completely &,
     .is-mobile &
       opacity: 1
+
+    @media screen and (max-height: 701px)
+      margin-bottom: 1rem
 
   &__item-container
     @extend .col-6

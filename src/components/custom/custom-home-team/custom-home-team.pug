@@ -4,7 +4,7 @@ section.custom-home-team(id='section-2', :style="{ height: (windowWidth > 880 ? 
   .custom-home-team__container
     .custom-home-team__team-container
       BaseLazyImg.custom-home-team__person(v-for='(person, i) in props.team_members', :key='`person-${i}`', :src='person.image', :style="{ zIndex: i * 1}", @mouseover.native='handleHover(i)', :class="{ 'custom-home-team__person--active': currIndex === i }")
-  .custom-home-team__content-container(:style="{ height: (maxHeight + 128) + 'px'}")
+  .custom-home-team__content-container(:style="{ height: (windowHeight > 701 ? (maxHeight + 128) + 'px' : (maxHeight + 80) + 'px') }")
     .custom-home-team__content
       .custom-home-team__bio(v-for='(bio, i) in props.team_members', :key='`bio-${i}`', :class="{ 'custom-home-team__bio--active': currIndex === i }" )
         .custom-home-team__name(v-html='bio.name')

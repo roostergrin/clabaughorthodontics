@@ -32,6 +32,9 @@
     @media screen and (min-height: 1080px)
       align-items: center
 
+    @media screen and (max-height: 701px) and (min-width: 600px)
+      padding-bottom: 1.5rem 
+
   &__information-container
     @include ipad-pro
       left: 50%
@@ -71,6 +74,9 @@
       @include ipad-pro
         bottom: 5%
         transform: translateX(-50%)
+
+    @media screen and (max-height: 701px) and (min-width: 600px)
+      bottom: 1.5rem
 
   &__item
     display: flex

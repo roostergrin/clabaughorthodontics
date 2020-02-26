@@ -29,6 +29,9 @@
   &__container
     @extend .container
 
+    @media screen and (max-height: 600px)
+      margin: 2.5rem auto 0
+
   &__left, &__right
     @extend .col-6
     @include ipad-pro
@@ -141,6 +144,8 @@
 
   &__logos
     @extend .col-6
+    @include desktop
+      width: calc((7/12) * 100%)
     @include ipad-pro
       margin: 2rem auto 0
     @include tablet-md
@@ -152,6 +157,9 @@
     display: flex
     justify-content: space-between
     margin-top: 2rem
+
+    @media screen and (max-height: 701px)
+      margin-top: 1rem
 
   &__logo
     @include desktop
@@ -172,6 +180,9 @@
     .fp-completely &,
     .is-mobile &
       opacity: 1
+
+    @media screen and (max-height: 701px)
+      height: 55px
 
   &__content
     @include tablet-md
