@@ -9,13 +9,16 @@
   padding: 2rem 0
   width: 100%
 
+  @media screen and (max-height: 600px)
+    padding-bottom: 0
+
   &--care
     box-shadow: $bs1
     background: $white
     padding: 1rem 0
 
   &--care-menu
-    box-shadow: none 
+    box-shadow: none
 
   &__container
     @extend .container--large
