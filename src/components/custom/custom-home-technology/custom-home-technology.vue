@@ -66,8 +66,8 @@ export default {
       var startY
       var distX
       var distY
-      var threshold = 100 // min dist for swipe
-      var restraint = 100 // max dist allow allowed at the same time in perpendicular direction
+      const threshold = 50 // min dist for swipe
+      // var restraint = 100 // max dist allow allowed at the same time in perpendicular direction
       var allowedTime = 300 // max time allowed to travel dist
       var elapsedTime
       var startTime
@@ -89,9 +89,9 @@ export default {
         if (elapsedTime <= allowedTime) {
 
         }
-        if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+        if (Math.abs(distX) >= threshold) {
           swipedir = (distX < 0) ? 'left' : 'right'
-        } else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) {
+        } else if (Math.abs(distY) >= threshold) {
           swipedir = (distY < 0) ? 'up' : 'down'
         }
         return handleSwipe(swipedir)
