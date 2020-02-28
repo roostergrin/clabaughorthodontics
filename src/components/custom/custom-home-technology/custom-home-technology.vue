@@ -66,7 +66,7 @@ export default {
       var startY
       var distX
       var distY
-      var threshold = 200 // min dist for swipe
+      var threshold = 150 // min dist for swipe
       var restraint = 100 // max dist allow allowed at the same time in perpendicular direction
       var allowedTime = 300 // max time allowed to travel dist
       var elapsedTime
