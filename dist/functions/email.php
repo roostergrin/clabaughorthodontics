@@ -14,9 +14,9 @@ function rg_serve_route () {
   global $wpdb;
 
   $data = json_decode(file_get_contents("php://input"), true);
-  $from = 'no-reply@wordpress.com';
-  $to = 'matt.sprague@roostergrin.com';
-  $subject = 'Rooster Grin Contact Form';
+  $from = 'no-reply@clabaughorthodontics.com';
+  $to = 'info@clabaughorthodontics.com';
+  $subject = 'WEbsite Contact Form Submisson';
   $headers = array('Content-Type: text/html; charset=UTF-8');
   $message = '<html><body>';
   $message .= '<div class="container" style="background-color: #ebf5ff; padding: 1.5rem 0;">
