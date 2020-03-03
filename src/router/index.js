@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import StyleGuide from 'pages/style-guide/style-guide'
-import PageNotFound from 'pages/404/404'
+// import PageNotFound from 'pages/404/404'
 import scrollBehavior from '@/shared/functionality/scroll-behavior'
 import store from '@/shared/store/index'
 
@@ -39,7 +39,7 @@ const router = new VueRouter({
       path: '/*',
       name: '404',
       navigation: false,
-      component: PageNotFound
+      component: Home
     }
   ],
   scrollBehavior
