@@ -37,7 +37,7 @@ const router = new VueRouter({
     },
     {
       path: '/*',
-      name: '404',
+      name: 'Home',
       navigation: false,
       component: Home
     }
