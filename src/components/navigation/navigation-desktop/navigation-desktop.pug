@@ -21,4 +21,7 @@
     .navigation-desktop__item
       .navigation-desktop__nav-secondary
         .navigation-desktop__consult-btn(@click='handleRoute(6)') Request Consultation
+        .navigation-desktop__consult-btn(v-html='props.virtual_consultation.label'
+          :href='props.virtual_consultation.href'
+          target='_blank')
         a.navigation-desktop__phone(:href="'tel:1-'+ props.phone" v-html='props.phone')    
