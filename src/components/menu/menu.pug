@@ -9,7 +9,7 @@
       a.menu__form(v-for='(form, i) in props.patient_forms', :key='`nav-form-${i}`', :href='form.link' v-html='form.label' target='_blank')
     .menu__consult
       .menu__consult-btn(@click='handleRoute(6)') Request Consultation
-      .menu__consult-btn(v-html='props.virtual_consultation.label'
+      a.menu__consult-btn(v-html='props.virtual_consultation.label'
         :href='props.virtual_consultation.href'
         target='_blank')    
             
