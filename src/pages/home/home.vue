@@ -10,7 +10,7 @@ import TheFooter from 'components/footer/footer'
 import WelcomeSection from 'custom/custom-home-welcome/custom-home-welcome'
 import WhySection from 'custom/custom-home-why/custom-home-why'
 
-import config from '@/config'
+// import config from '@/config'
 
 export default {
   components: {
@@ -26,7 +26,7 @@ export default {
   data () {
     return {
       fullpageOptions: {
-        licenseKey: config.fullpage.KEY, // add config file manually to server: DO NOT push key to github
+        licenseKey: '821EA482-63614DBE-A42AA4EC-0B2388AE', // add config file manually to server: DO NOT push key to github
         onLeave: this.handleIndex,
         easeingcss3: 'cubic-bezier(.52, .01, .16, 1)',
         responsiveWidth: 880,

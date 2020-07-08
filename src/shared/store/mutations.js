@@ -1,3 +1,12 @@
+// import {
+//   // GET_BLOGS,
+//   // GET_BLOGS_ARR,
+//   GET_PAGES,
+//   GET_GLOBAL,
+//   SET_SCROLLED,
+//   VIEW_MENU
+// } from './mutation-types.js'
+
 import {
   GET_APP,
   GET_PAGES,
