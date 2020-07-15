@@ -12,7 +12,7 @@
           .navigation-desktop__cross
             span
             span
-        .navigation-desktop__patient-forms
+        .navigation-desktop__patient-forms(v-if='props.patient_forms')
           .navigation-desktop__forms-btn(@click='handleDropdown') Patient forms
           .navigation-desktop__dropdown(:class="{ 'navigation-desktop__dropdown--active': dropdownActive }")
             .navigation-desktop__form(v-for='(form, i) in props.patient_forms', :key='`form-${i}`', :style="{ transitionDelay: (i * .15) + 's' }")

@@ -4,7 +4,7 @@
     li.menu__item(v-if='windowWidth <= 880')
       router-link.menu__item--alt(to='/home-care' @click.native='closeDrawer') Home Care
   .menu__lower(v-if='windowWidth <= 880')
-    .menu__forms
+    .menu__forms(v-if='props.patient_forms')
       .menu__form-title Patient Forms
       a.menu__form(v-for='(form, i) in props.patient_forms', :key='`nav-form-${i}`', :href='form.link' v-html='form.label' target='_blank')
     .menu__consult
