@@ -5,11 +5,19 @@ import App from './app/app'
 import router from './router'
 import store from './shared/store'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 /* eslint-disable */
 import Components from './resources/components'
 import { vendors } from './resources/vendors'
 import { fonts } from './resources/fonts'
 /* eslint-enable */
+
+library.add(faCoffee)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 
