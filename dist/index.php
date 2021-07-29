@@ -20,8 +20,40 @@
     try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
     catch(e){window.attachEvent("onload", $buo_f)}
   </script>
-  <script type="text/javascript">
+  <script type="text/javascript"></script>
 
+  <!-- Global site tag (gtag.js) - Google Ads: 831853808 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-831853808"></script> 
+  
+  <script type="text/javascript"> 
+    window.dataLayer = window.dataLayer || []; 
+    function gtag(){
+      dataLayer.push(arguments);
+    } 
+    gtag('js', new Date()); 
+
+    gtag('config', 'AW-831853808'); 
+  </script>
+
+  <!-- Event snippet for Book appointment conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script type="text/javascript"> 
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-831853808/2z10CLDp2NoCEPCp1IwD',
+      'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+
+  <script type="text/javascript"> gtag('config', 'AW-831853808/4qlGCM6u2doCEPCp1IwD', { 'phone_conversion_number': '4024831009' }); </script>
+
+  <script type="text/javascript">
   (function(d){
     var s = d.createElement("script");
     s.setAttribute("data-account", "D3656BNpyD");
@@ -31,8 +63,7 @@
   (function(d){
     var ns = d.createElement("noscript");
     ns.innerHTML = `Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a>`;
-    (d.body || d.head).appendChild(ns);})(document);   
-
+    (d.body || d.head).appendChild(ns);})(document);
   </script>
 
   <div class="footer__container-userway-trigger" id="accessibilityWidget" tabindex="0">Click for Accessibility</div>

@@ -44,6 +44,6 @@
       h1.form-contact__modal-title Thank you! 
       .form-contact__modal-text We will be in touch shortly!
       .form-contact__lower(v-if='isFirstTime')
-        .form-contact__modal-body Prior to your first visit to our office please fill out the below new patient forms.
+        //- .form-contact__modal-body Prior to your first visit to our office please fill out the below new patient forms.
         .form-contact__forms
           a.form-contact__modal-form(v-for='(form, i) in content.patient_forms', :href='form.link' target='_blank' v-html='form.label')  
