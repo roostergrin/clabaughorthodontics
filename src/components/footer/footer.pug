@@ -9,8 +9,8 @@ footer.footer(v-if='props')
       .footer__item
         a.footer__privacy(:href='props.privacy_policy' target='_blank' rel='noreferrer noopener') Privacy Policy
         router-link.footer__home_care(to='/home-care') Home Care
-      .footer__item
-        a.footer__accessibility #[a.footer__container-userway-trigger,id="accessibilityWidget",tabindex="0" Click for Accessibility]
+      //-.footer__item
+        a.footer__accessibility #[a.footer__container-userway-trigger[,tabindex="0" Click for Accessibility]
     //- .footer__right
       //- a.footer__address(:href='props.address_link' v-html='props.address')
                 
