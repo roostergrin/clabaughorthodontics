@@ -8,7 +8,9 @@ footer.footer(v-if='props')
           BaseIcon.footer__social-icon(:name='link.icon')
       .footer__item
         a.footer__privacy(:href='props.privacy_policy' target='_blank' rel='noreferrer noopener') Privacy Policy
-        router-link.footer__home_care(to='/home-care') Home Care       
+        router-link.footer__home_care(to='/home-care') Home Care
+      .footer__item
+        a.footer__accessibility #[a.footer__container-userway-trigger,id="accessibilityWidget",tabindex="0" Click for Accessibility]
     //- .footer__right
       //- a.footer__address(:href='props.address_link' v-html='props.address')
                 
