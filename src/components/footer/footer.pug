@@ -3,8 +3,8 @@ footer.footer(v-if='props')
     .footer__left
       .footer__item
         p.footer__advantage Online Advantage by #[a.footer__roostergrin(href='https://roostergrin.com' target='_blank' rel='noreferrer noopener') RoosterGrin Media]
-      .footer__container-userway-trigger
-        a.footer__accessibility #[a.footer__container-userway-trigger, tabindex="0" Click for Accessibility]
+      .container-userway-trigger
+        a.footer__accessibility #[a.accessibilityWidget, tabindex="0" Click for Accessibility]
       .footer__item
         a.footer__social-link(v-for='(link, i) in props.social', :key='`footer-link-${i}`', :href='link.link' target='_blank' rel='noreferrer noopener')
           BaseIcon.footer__social-icon(:name='link.icon')
